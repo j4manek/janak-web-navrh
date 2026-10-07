@@ -1,0 +1,248 @@
+/* Doplňky k původnímu designu. Barvy a rozměry bereme z tokenů původního webu (inline.css / entry.css). */
+
+/* Otevřené body k potvrzení majitelem – před spuštěním zmizí */
+.ov {
+  display: inline-block;
+  background: #fff1a8;
+  color: #5c4400;
+  border-radius: 4px;
+  padding: 0 0.35em;
+  font-size: 0.85em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Lišta volání na mobilu: telefon je na dosah palce i při scrollování */
+.call-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--ui-bg);
+  border-top: 1px solid var(--ui-border);
+}
+.call-bar a {
+  flex: 1;
+  text-align: center;
+  border-radius: 0.375rem;
+  padding: 0.7rem 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.call-bar__call {
+  background: var(--ui-color-primary-600);
+  color: #fff;
+}
+.call-bar__form {
+  color: var(--ui-color-primary-600);
+  box-shadow: inset 0 0 0 1px var(--ui-color-primary-600);
+}
+body {
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 1024px) {
+  .call-bar { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* Mobilní menu (původní web ho řeší v Nuxtu, zde jednoduchý panel) */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem;
+  border-bottom: 1px solid var(--ui-border);
+  background: var(--ui-bg);
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a {
+  padding: 0.6rem 0.25rem;
+  font-weight: 500;
+  color: var(--ui-text-muted);
+}
+.mobile-nav a:hover { color: var(--ui-color-primary-600); }
+@media (min-width: 1024px) {
+  .mobile-nav { display: none !important; }
+}
+
+/* Mapa zvýraznění, ať je vidět fokus z klávesnice */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ui-color-primary-600);
+  outline-offset: 2px;
+}
+
+/* Sekce jsou grid bez pevných sloupců: bez tohoto pravidla by nejširší obsah rozšířil stránku na mobilu */
+section.grid { grid-template-columns: minmax(0, 1fr); }
+
+/* Utility, které původní web nepoužíval, a proto nejsou v jeho vygenerovaném CSS (stejné hodnoty jako Tailwind) */
+.gap-10 { gap: 2.5rem; }
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.max-w-xl { max-width: 36rem; }
+.min-h-\[60vh\] { min-height: 60vh; }
+.h-\[520px\] { height: 520px; }
+.hover\:underline:hover { text-decoration: underline; }
+@media (min-width: 40rem) {
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sm\:p-8 { padding: 2rem; }
+  .sm\:w-auto { width: auto; }
+  .sm\:text-left { text-align: left; }
+}
+@media (min-width: 48rem) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:text-5xl { font-size: 3rem; line-height: 1; }
+}
+
+/* Tlačítko Zavolejte v hlavičce: od 640 px, na mobilu ho nahrazuje lišta volání */
+.btn-call {
+  display: none;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  background: var(--ui-color-primary-600);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-call:hover { filter: brightness(1.08); }
+@media (min-width: 40rem) {
+  .btn-call { display: inline-flex; }
+}
+
+/* Měřicí štítky u tlačítek: co se spustí, kam to jde, proč a zda už se měří */
+.mrow { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+.mtag {
+  max-width: 24rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px dashed #94a3b8;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  font-size: 0.8rem;
+}
+.mtag__flow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.mtag__icon {
+  width: 14px; height: 14px; flex: none;
+  fill: none; stroke: var(--ui-color-primary-600); stroke-width: 2.2; stroke-linecap: round;
+}
+.mtag__dot { width: 8px; height: 8px; border-radius: 9999px; background: #9ca3af; }
+.mtag__ev { font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: 600; color: var(--ui-text-highlighted, #0f172a); }
+.mtag__arrow { color: #94a3b8; }
+.mtag__to { color: var(--ui-text-muted, #475569); }
+.mtag__state { display: none; margin-left: auto; font-size: 0.72rem; font-weight: 600; }
+.mtag__why { margin-top: 0.35rem; color: var(--ui-text-muted, #475569); }
+body[data-consent="unset"] .mtag__state--unset,
+body[data-consent="granted"] .mtag__state--on,
+body[data-consent="denied"] .mtag__state--off { display: inline; }
+body[data-consent="unset"] .mtag__state--unset { color: #64748b; }
+body[data-consent="granted"] .mtag__state--on { color: #15803d; }
+body[data-consent="denied"] .mtag__state--off { color: #b91c1c; }
+body[data-consent="granted"] .mtag__dot { background: #16a34a; }
+body[data-consent="denied"] .mtag__dot { background: #dc2626; }
+
+/* Banner cookies: nad lištou volání na mobilu, vpravo dole na desktopu */
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 5rem;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--ui-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__btns { display: flex; gap: 0.5rem; justify-content: flex-end; flex-wrap: wrap; }
+.cookie-btn {
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--ui-color-primary-600);
+  color: #fff;
+}
+.cookie-btn--ghost {
+  background: transparent;
+  color: var(--ui-text);
+  box-shadow: inset 0 0 0 1px var(--ui-border);
+}
+@media (min-width: 1024px) {
+  .cookie-banner { left: auto; right: 1rem; bottom: 1rem; width: 28rem; }
+}
+
+.cookie-banner__text { display: grid; gap: 0.25rem; }
+
+/* Dekorativní text hero nad plovoucími ikonami */
+.z-20 { z-index: 20; }
+
+.self-start { align-self: start; }
+
+/* Stránky zásad: čitelný text v úzkém sloupci, tabulky se na mobilu posouvají */
+.policy { max-width: 48rem; margin: 0 auto; padding: 2.5rem 1rem 3rem; color: var(--ui-text); }
+.policy__title { font-size: 2rem; font-weight: 700; line-height: 1.2; color: var(--ui-text-highlighted); margin-bottom: 1rem; }
+.policy__h { font-size: 1.25rem; font-weight: 700; color: var(--ui-text-highlighted); margin: 2rem 0 0.75rem; }
+.policy__p, .policy__ul { margin: 0.75rem 0; line-height: 1.6; }
+.policy__ul { padding-left: 1.25rem; list-style: disc; }
+.policy__ul li { margin: 0.35rem 0; }
+.policy a { color: var(--ui-color-primary-600); text-decoration: underline; }
+.policy__tbl { overflow-x: auto; margin: 0.75rem 0; }
+.policy table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.policy th, .policy td { text-align: left; vertical-align: top; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--ui-border); }
+.policy th { font-weight: 700; color: var(--ui-text-highlighted); }
+
+.h-\[820px\] { height: 820px; }
+
+/* Sekce na hlavní stránce: běžné odsazení místo celé výšky okna */
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+@media (min-width: 64rem) { .lg\:py-16 { padding-top: 4rem; padding-bottom: 4rem; } }
+
+/* Stránka „Jak měříme“: širší sloupec, kroky měření, ukázka přehledu */
+.mer { max-width: 56rem; }
+.mflow { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.mstep { border: 1px solid var(--ui-border); border-radius: 0.75rem; padding: 1rem; background: var(--ui-bg); }
+.mstep__title { font-weight: 700; color: var(--ui-text-highlighted); }
+.mstep__ev { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.8rem; color: var(--ui-color-primary-600); margin-top: 0.25rem; }
+.mstep__note { font-size: 0.9rem; color: var(--ui-text-muted); margin: 0.5rem 0; }
+.mbadge { display: inline-block; font-size: 0.72rem; font-weight: 600; border-radius: 999px; padding: 0.15rem 0.6rem; }
+.b-web { background: #dbeafe; color: #1e40af; }
+.b-ext { background: #fef3c7; color: #92400e; }
+.mdash { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 0.75rem; margin: 1rem 0 0.25rem; }
+.mkpi { border: 1px dashed #94a3b8; border-radius: 0.75rem; padding: 1rem; text-align: center; }
+.mkpi__val { font-size: 1.75rem; font-weight: 700; color: #cbd5e1; }
+.mkpi__lbl { font-size: 0.85rem; color: var(--ui-text-muted); margin-top: 0.25rem; }
+
+/* Štítek měření v hlavičce pod tlačítkem Zavolejte (na mobilu se schová s tlačítkem) */
+.phone-wrap { display: none; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
+@media (min-width: 40rem) {
+  .phone-wrap { display: flex; }
+}
+.mtag-mini {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.1rem 0.5rem; border: 1px dashed #94a3b8; border-radius: 999px;
+  background: #f8fafc; font-size: 0.7rem; white-space: nowrap; cursor: help;
+}
+
+/* Karta hodnocení: skóre, hvězdičky, počet hodnocení a odkaz na profil */
+.rating-card {
+  display: inline-flex; align-items: center; gap: 0.9rem;
+  padding: 0.7rem 1rem; border: 1px solid var(--ui-border); border-radius: 0.75rem;
+  background: var(--ui-bg); box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  color: var(--ui-text); text-decoration: none; transition: box-shadow 0.2s ease;
+}
+.rating-card:hover { box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12); }
+.rating-card__score { font-size: 2rem; font-weight: 800; line-height: 1; color: var(--ui-text-highlighted); }
+.rating-card__body { display: flex; flex-direction: column; gap: 0.2rem; }
+.rating-card__stars { display: flex; gap: 0.1rem; }
+.rating-card__meta { font-size: 0.8rem; color: var(--ui-text-muted); }
+.rating-card__link {
+  font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+  color: var(--ui-color-primary-600); padding-left: 0.9rem; border-left: 1px solid var(--ui-border);
+}

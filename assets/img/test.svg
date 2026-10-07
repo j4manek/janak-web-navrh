@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 200">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&amp;display=swap');
+
+    text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight:bold;
+    }
+    .capital{
+      font-size:75px;
+    }
+    .lowercase{
+font-size:60px;
+    }
+    .main{
+      fill: oklch(62.3% 0.214 259.815);
+    }
+    .main.capital{
+      font-size:100px;
+    }
+    .main.lowercase{
+      font-size:85px;
+    }
+    @keyframes bouncy{
+      0%{
+        transform: translateY(0)
+      }
+      25%{
+        transform: translateY(-5px)
+      }
+      50%{
+        transform: translateY(0)
+      }
+    }
+    
+    .animate{
+      animation: 
+        2s ease-in-out infinite bouncy;
+      --delay: 0.15s
+    }
+    #anim-R{
+      animation-delay: calc(var(--delay) * 0);
+    }
+    #anim-A{
+      animation-delay: calc(var(--delay) * 1);
+    }
+    #anim-D{
+      animation-delay: calc(var(--delay) * 2);
+    }
+    #anim-Š{
+      animation-delay: calc(var(--delay) * 3);
+    }
+    #anim-I{
+      animation-delay: calc(var(--delay) * 4);
+    }
+    #anim-Z{
+      animation-delay: calc(var(--delay) * 5);
+    }
+    #anim-A-2{
+      animation-delay: calc(var(--delay) * 6);
+    }
+    #anim-V{
+      animation-delay: calc(var(--delay) * 7);
+    }
+    #anim-O{
+      animation-delay: calc(var(--delay) * 8);
+    }
+    #anim-L{
+      animation-delay: calc(var(--delay) * 9);
+    }
+    #anim-E{
+      animation-delay: calc(var(--delay) * 10);
+    }
+    #anim-J{
+      animation-delay: calc(var(--delay) * 11);
+    }
+  </style>
+  <defs id="defs">
+    <path id="curve-0" d="M20,130 C152,50 368,40 490,80" fill="transparent" stroke="red">
+    </path>
+  </defs>
+  <path id="curve2" d="M97,184 C178,125 354,114 448,159" fill="transparent"/>
+  <text id="anim-R" width="500" class="capital animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="0">R</textPath>
+  </text>
+  <text id="anim-A" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="49">A</textPath>
+  </text>
+  <text id="anim-D" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="89">D</textPath>
+  </text>
+  <text id="anim-Š" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="132">Š</textPath>
+  </text>
+  <text id="anim-I" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="169">I</textPath>
+  </text>
+  <text id="anim-Z" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="209">Z</textPath>
+  </text>
+  <text id="anim-A-2" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="249">A</textPath>
+  </text>
+  <text id="anim-V" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="281">V</textPath>
+  </text>
+  <text id="anim-O" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="320">O</textPath>
+  </text>
+  <text id="anim-L" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="369">L</textPath>
+  </text>
+  <text id="anim-E" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="409">E</textPath>
+  </text>
+  <text id="anim-J" width="500" class="lowercase animate">
+    <textPath alignment-baseline="top" xlink:href="#curve-0" fill="black" startOffset="449">J</textPath>
+  </text>
+  <text width="500">
+    <textPath alignment-baseline="top" xlink:href="#curve2" class="main capital">
+      K
+    </textPath>
+  </text>
+  <text width="500">
+    <textPath alignment-baseline="top" xlink:href="#curve2" class="main lowercase" startOffset="75">
+      EVINA!
+    </textPath>
+  </text>
+</svg>
