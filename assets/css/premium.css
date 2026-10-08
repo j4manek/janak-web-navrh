@@ -75,6 +75,8 @@
 /* ---------- cards / grid ---------- */
 .pm-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
 @media (min-width: 48rem) { .pm-grid--2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 48rem) { .pm-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+.pm-grid--tight { margin-top: 0; }
 .pm-card {
   background: var(--ui-bg); border: 1px solid var(--ui-border); border-radius: 0.75rem;
   padding: 1.4rem 1.5rem; position: relative; overflow: hidden;
