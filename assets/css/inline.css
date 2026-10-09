@@ -1,16 +1,16 @@
 @layer base {
   :root {
-  --ui-color-primary-50: var(--color-blue-50, oklch(97% 0.014 254.604));
-  --ui-color-primary-100: var(--color-blue-100, oklch(93.2% 0.032 255.585));
-  --ui-color-primary-200: var(--color-blue-200, oklch(88.2% 0.059 254.128));
-  --ui-color-primary-300: var(--color-blue-300, oklch(80.9% 0.105 251.813));
-  --ui-color-primary-400: var(--color-blue-400, oklch(70.7% 0.165 254.624));
-  --ui-color-primary-500: var(--color-blue-500, oklch(62.3% 0.214 259.815));
-  --ui-color-primary-600: var(--color-blue-600, oklch(54.6% 0.245 262.881));
-  --ui-color-primary-700: var(--color-blue-700, oklch(48.8% 0.243 264.376));
-  --ui-color-primary-800: var(--color-blue-800, oklch(42.4% 0.199 265.638));
-  --ui-color-primary-900: var(--color-blue-900, oklch(37.9% 0.146 265.522));
-  --ui-color-primary-950: var(--color-blue-950, oklch(28.2% 0.091 267.935));
+  --ui-color-primary-50: var(--color-blue-50, oklch(97% 0.011 234.602));
+  --ui-color-primary-100: var(--color-blue-100, oklch(93.2% 0.025 234.602));
+  --ui-color-primary-200: var(--color-blue-200, oklch(88.2% 0.046 234.602));
+  --ui-color-primary-300: var(--color-blue-300, oklch(80.9% 0.081 234.602));
+  --ui-color-primary-400: var(--color-blue-400, oklch(70.7% 0.128 234.602));
+  --ui-color-primary-500: var(--color-blue-500, oklch(62.3% 0.166 234.602));
+  --ui-color-primary-600: var(--color-blue-600, oklch(54.6% 0.19 234.602));
+  --ui-color-primary-700: var(--color-blue-700, oklch(48.8% 0.188 234.602));
+  --ui-color-primary-800: var(--color-blue-800, oklch(42.4% 0.154 234.602));
+  --ui-color-primary-900: var(--color-blue-900, oklch(37.9% 0.113 234.602));
+  --ui-color-primary-950: var(--color-blue-950, oklch(28.2% 0.07 234.602));
   --ui-color-secondary-50: var(--color-blue-50, oklch(97% 0.014 254.604));
   --ui-color-secondary-100: var(--color-blue-100, oklch(93.2% 0.032 255.585));
   --ui-color-secondary-200: var(--color-blue-200, oklch(88.2% 0.059 254.128));
