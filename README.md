@@ -50,12 +50,13 @@ Z auditu jsem nepřevzal: „Příjezd do 2 hodin“, „Dostupní 24/7“, bann
 Všechny nepotvrzené údaje jsou v textu označené žlutě, např. **[ověřit]**. Před spuštěním je potřeba je potvrdit s majitelem a odstranit:
 
 1. **Oblast**: cílení je Královéhradecký a Pardubický kraj (podle majitele), větší projekty i mimo ně. Potvrdit okresy a maximální vzdálenost.
-2. **Hodnocení na firmy.cz** (5.0 z 11) je shrnutí, ne přímé ověření. Před použitím zkontrolovat ručně.
-3. **Zdroj recenzí a Google profil**: počet a hodnocení.
+2. ~~Hodnocení na firmy.cz~~ – **ověřeno 9. 10. 2026 přímo na [firmy.cz](https://en.firmy.cz/company/13757941-instalater-kevin-janak-vamberk.html): 5.0 z 11 recenzí.**
+3. **Google profil**: nepodařilo se dohledat přes web search. Pokud existuje, doplní majitel odkaz a počet hodnocení.
 4. **Zásady ochrany osobních údajů**: odkaz v souhlasu zatím nevede na existující stránku, je to placeholder.
 5. **Texty služeb na landing stránkách** jsou návrhy vycházející z nabídky na původním webu. Majitel musí potvrdit, že je firma všechny nabízí.
 6. **Transparentní ceny**: web to tvrdí, ale žádnou cenu neuvádí. Rozhodnutí je na majiteli.
 7. **Cílový e-mail/kanál pro poptávky ze stránek SVJ a Developeři**: zatím nerozhodnuto (jen připravené proměnné `JANAK_LEAD_ENDPOINT_SVJ` a `JANAK_LEAD_ENDPOINT_DEVELOPERI`), teď šlo jen o grafický návrh.
+8. ~~Pracovní doba~~ – **ověřeno 9. 10. 2026 na vlastním webu i firmy.cz: Po–Pá 08:00–18:00, mimo to dle domluvy.** Havárie/24/7 na původním webu zmíněné, ale v rozporu s uvedenou dobou – záměrně nepřevzato (viz redesign bez havárie jako hlavního CTA).
 
 ## Technické poznámky
 
