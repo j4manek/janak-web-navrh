@@ -14,7 +14,7 @@
 font-size:60px;
     }
     .main{
-      fill: oklch(62.3% 0.214 259.815);
+      fill: #1de3df;
     }
     .main.capital{
       font-size:100px;
