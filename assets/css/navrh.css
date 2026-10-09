@@ -252,7 +252,7 @@ body[data-consent="denied"] .mtag__dot { background: #dc2626; }
    modré výše - tahle světlá by tam na malém textu nebyla čitelná.
    Vyloučeno na .pm-page (SVJ/developeři) - ty mají vlastní měděný vzhled. */
 body:not(.pm-page) span.text-primary {
-  color: #1de3df;
+  color: #79cdf3;
   -webkit-text-stroke: 1px #0a0a0a;
   paint-order: stroke fill;
 }
@@ -264,7 +264,7 @@ body:not(.pm-page) span.text-primary {
 body:not(.pm-page) .btn-call,
 body:not(.pm-page) .call-bar__call,
 body:not(.pm-page) [class*="bg-blue-600"][class*="text-white"] {
-  background: #1de3df;
+  background: #79cdf3;
   color: #0a0a0a;
   border: 1.5px solid #0a0a0a;
 }
