@@ -49,7 +49,7 @@ Z auditu jsem nepřevzal: „Příjezd do 2 hodin“, „Dostupní 24/7“, bann
 
 Všechny nepotvrzené údaje jsou v textu označené žlutě, např. **[ověřit]**. Před spuštěním je potřeba je potvrdit s majitelem a odstranit:
 
-1. **Oblast**: cílení je Královéhradecký a Pardubický kraj (podle majitele), větší projekty i mimo ně. Potvrdit okresy a maximální vzdálenost.
+1. ~~Oblast~~ – **rozhodnuto 9. 10. 2026: hlavní nabídka (topení, kanalizace, rekonstrukce) jen Královéhradecký a Pardubický kraj, bez výjimky pro okolní okresy. Pro SVJ a developerské projekty (`svj-bytove-domy.html`, `developeri.html`) omezení na kraj neplatí – odstraněno z meta popisků i JSON-LD areaServed.**
 2. ~~Hodnocení na firmy.cz~~ – **ověřeno 9. 10. 2026 přímo na [firmy.cz](https://en.firmy.cz/company/13757941-instalater-kevin-janak-vamberk.html): 5.0 z 11 recenzí.**
 3. **Google profil**: nepodařilo se dohledat přes web search. Pokud existuje, doplní majitel odkaz a počet hodnocení.
 4. **Zásady ochrany osobních údajů**: odkaz v souhlasu zatím nevede na existující stránku, je to placeholder.
