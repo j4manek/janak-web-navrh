@@ -1,12 +1,33 @@
-// Měření: události jdou do window.dataLayer (standard pro Google Tag Manager), ale jen po souhlasu
-// návštěvníka. Stav souhlasu se předává jako Google Consent Mode v2. Samo nic neposílá do Google.
-// Až bude web ostrý, přidá se GTM kontejner a události se mapují na tagy bez zásahu do HTML.
+// Měření: GA4 (gtag.js) s Google Consent Mode v2. Výchozí stav je "denied" - gtag.js
+// se načte vždy (nutné pro consent mode), ale nic neukládá ani neposílá do GA4, dokud
+// návštěvník neklikne "Přijmout měření". Na localhostu se gtag.js vůbec nenačítá.
 (function () {
+  var GA4_ID = 'G-E4GBFEEDG0';
   window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+
   var KEY = 'janak-consent';
   var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   var page = location.pathname;
   var banner = document.querySelector('.cookie-banner');
+
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+
+  if (!local) {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA4_ID);
+  }
 
   // Napojení formuláře na Telegram (outputs/lead-telegram-automation). [doplnit] až bude
   // Worker nasazený - do té doby formulář jen ukáže potvrzení lokálně (prototyp).
@@ -36,21 +57,22 @@
     var state = value || 'unset';
     var s = state === 'granted' ? 'granted' : 'denied';
     document.body.dataset.consent = state;
-    window.dataLayer.push({
-      event: 'consent_update',
-      analytics_storage: s,
-      ad_storage: s,
-      ad_user_data: s,
-      ad_personalization: s
-    });
+    if (state !== 'unset') {
+      gtag('consent', 'update', {
+        analytics_storage: s,
+        ad_storage: s,
+        ad_user_data: s,
+        ad_personalization: s
+      });
+    }
     if (banner) banner.hidden = state !== 'unset';
   }
 
   function track(name, params) {
     if (readConsent() !== 'granted') return;
-    var data = Object.assign({ event: name, page_path: page }, params);
-    window.dataLayer.push(data);
-    if (local) console.info('[měření]', data);
+    var data = Object.assign({ page_path: page }, params);
+    gtag('event', name, data);
+    if (local) console.info('[měření]', name, data);
   }
 
   document.addEventListener('click', function (e) {

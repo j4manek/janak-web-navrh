@@ -6,6 +6,8 @@ Tento dokument popisuje, co na novém webu uvidíte o návštěvnících a popt�
 
 Na současném webu je jen **Google Analytics 4** (ID G-E4GBFEEDG0). Ukáže návštěvy, odkud lidé přicházejí a jak dlouho zůstávají. **Neukáže**, kolik lidí klikne na telefon, kolik odešle formulář, ani nepřipojuje reklamy. Google Ads tag na webu chybí.
 
+**Update 10. 10. 2026 (tento návrh):** GA4 tag (gtag.js) je teď na všech stránkách návrhu zapojený přímo, s Google Consent Mode v2 (viz bod 3). Produkční web ho zatím nemá – tahle část popisuje stav v `outputs/janak-web-navrh-local/`, ne na janak-instalaterstvi.cz.
+
 ## 2. Co návrh přidává
 
 Návrh posílá na každou důležitou akci jednu událost. Události jsou popsané níže a v prototypu je uvidíte v konzoli prohlížeče.
@@ -33,8 +35,11 @@ Poznámka k `phone_click`: měří **klik** na číslo, ne **skutečný hovor**.
 ## 4. Co je potřeba doplnit před spuštěním
 
 1. **Sledování hovorů z webu**: buď dynamické telefonní číslo (každý zdroj má jiné číslo, takže víte, odkud hovor přišel), nebo jen rozšíření volání v reklamě. Rozhodnutí je na majiteli, protože ovlivní, jaké číslo je na webu.
-2. **Souhlas návštěvníků s cookies**: analytické a reklamní měření v ČR vyžaduje souhlas návštěvníka. Prototyp už má banner s volbou „Přijmout měření“ / „Odmítnout“. Bez souhlasu se žádná událost neodešle. Volbu lze změnit v patičce. Na ostrém webu musí banner schválit správce a napojit ho na Google Consent Mode v2.
-3. **Google Tag Manager kontejner** a **konverzní akce v Google Ads** (ID a popisek konverze). Založí se v účtu klienta, zatím je neznáme.
+2. **Souhlas návštěvníků s cookies**: analytické a reklamní měření v ČR vyžaduje souhlas návštěvníka. Banner s volbou „Přijmout měření“ / „Odmítnout“ je hotový a napojený na **Google Consent Mode v2** – `gtag('consent', 'default', ...)` nastaví vše na „denied“ při načtení stránky, `gtag('consent', 'update', ...)` se zavolá až po kliknutí v banneru. Bez souhlasu GA4 neukládá cookies ani neidentifikuje návštěvníka. Volbu lze změnit v patičce.
+3. ~~Google Tag Manager kontejner~~ – **vyřešeno jinak: GA4 (gtag.js, ID G-E4GBFEEDG0) je zapojený přímo přes `assets/js/mereni.js`, bez GTM kontejneru.** Jednodušší na údržbu u statického webu bez vlastního backendu. **Zbývá** (v Google účtech, ne na webu):
+   - V GA4 admin konzoli označit `generate_lead` a `phone_click` jako **klíčové události** (key events) – bez toho je Google Ads neumí importovat jako konverze.
+   - Ověřit, že je GA4 property propojená s účtem Google Ads (257-552-2698) – pokud ne, propojit v GA4 → Admin → Product links → Google Ads.
+   - Po propojení v Google Ads **importovat** `generate_lead` a `phone_click` jako konverzní akce (primary), ostatní (`form_start`, `cta_click`, `email_click`) jako sekundární/needefinovat pro bidding.
 4. **Kam chodí poptávky**: vyřešeno automatizací do Telegramu s automatickým tagem urgence/velikosti zakázky (`outputs/lead-telegram-automation/`), čeká se jen na nasazení (Cloudflare Worker + Telegram bot) a nastavení endpointu ve `assets/js/mereni.js`. Formuláře na `svj-bytove-domy.html` a `developeri.html` mají vlastní proměnné (`JANAK_LEAD_ENDPOINT_SVJ`, `JANAK_LEAD_ENDPOINT_DEVELOPERI`), takže mohou chodit na jiný e-mail/kanál než hlavní formulář – cílová adresa zatím **[ověřit]**, čeká na rozhodnutí majitele.
 5. **Hodnota zakázky**: průměrná částka za topení, rekonstrukci, SVJ a developerskou zakázku. Bez ní nejde spočítat návratnost reklamy, jen cena za poptávku.
 
@@ -51,9 +56,10 @@ U každého klíčového tlačítka je štítek: co se spustí (např. `phone_cl
 1. Spustit web podle [README.md](README.md).
 2. Otevřít vývojářské nástroje prohlížeče (konzole).
 3. Přijmout měření v banneru a kliknout na telefonní číslo nebo odeslat formulář. V konzoli se objeví řádek `[měření]` s danou událostí. Bez souhlasu se nic neodešle.
-4. Všechny události jsou v `window.dataLayer`.
+4. Všechny události jsou v `window.dataLayer` jako skutečná `gtag('event', ...)` volání.
+5. Na nasazeném webu (ne localhost) lze ověřit reálné doručení do GA4 přes **Realtime report** nebo **DebugView** (GA4 admin → Debug View, nutné přidat `?debug_mode=true` do adresy nebo rozšíření Google Analytics Debugger).
 
-Lokální běh nic neposílá do Google. Analytika se na localhostu záměrně nenačítá, aby testovací návštěvy nepsaly do ostrých dat.
+Lokální běh nic neposílá do Google – `gtag.js` se na `localhost`/`127.0.0.1` vůbec nenačítá (viz `mereni.js`), aby testovací návštěvy nepsaly do ostrých dat. Na GitHub Pages i na ostrém webu se `gtag.js` načítá vždy (kvůli Consent Mode v2), ale bez souhlasu neidentifikuje návštěvníka ani neukládá cookie.
 
 ## 7. Co sledovat každý týden
 
