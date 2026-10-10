@@ -274,3 +274,27 @@ body:not(.pm-page) [class*="bg-blue-600"][class*="text-white"]:hover {
   filter: brightness(0.95);
 }
 body:not(.pm-page) .call-bar__form { color: #0a0a0a; }
+
+/* Fotogalerie: mřížka náhledů + lightbox po kliknutí */
+.gallery-item {
+  display: block; position: relative; border: 0; padding: 0; background: none;
+  cursor: zoom-in; border-radius: 0.75rem; overflow: hidden; aspect-ratio: 4 / 3; width: 100%;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.2s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item__caption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 0.6rem 0.9rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+  color: #fff; font-size: 0.85rem; text-align: left;
+}
+.lightbox {
+  position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.85);
+  display: flex; align-items: center; justify-content: center; padding: 2rem; cursor: zoom-out;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 0.5rem; }
+.lightbox__close {
+  position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem;
+  border-radius: 999px; background: rgba(255,255,255,0.15); color: #fff; border: 0;
+  font-size: 1.5rem; line-height: 1; cursor: pointer;
+}
