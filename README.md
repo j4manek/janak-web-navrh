@@ -51,7 +51,7 @@ Všechny nepotvrzené údaje jsou v textu označené žlutě, např. **[ověřit
 
 1. ~~Oblast~~ – **rozhodnuto 9. 10. 2026: hlavní nabídka (topení, kanalizace, rekonstrukce) jen Královéhradecký a Pardubický kraj, bez výjimky pro okolní okresy. Pro SVJ a developerské projekty (`svj-bytove-domy.html`, `developeri.html`) omezení na kraj neplatí – odstraněno z meta popisků i JSON-LD areaServed.**
 2. ~~Hodnocení na firmy.cz~~ – **ověřeno 9. 10. 2026 přímo na [firmy.cz](https://en.firmy.cz/company/13757941-instalater-kevin-janak-vamberk.html): 5.0 z 11 recenzí.**
-3. **Google profil**: nepodařilo se dohledat přes web search. Pokud existuje, doplní majitel odkaz a počet hodnocení.
+3. ~~Google profil~~ – **odkaz dodal majitel 10. 10. 2026: https://share.google/Hr5vUiaaAmltkZu51 (Knowledge Graph ID /g/11wfkk9hk9, potvrzuje existenci profilu). Přesný počet hvězdiček/recenzí se nepodařilo automaticky ověřit (Google blokuje botům přístup) – doplnit ručně, až bude k dispozici.**
 4. ~~Zásady ochrany osobních údajů~~ – **stránka existuje (`ochrana-soukromi.html`), ale sama má na začátku poznámku „návrh – před použitím zkontroluje právník". Nejde o chybějící odkaz, jde o právní revizi před spuštěním.**
 5. **Texty služeb na landing stránkách** jsou návrhy vycházející z nabídky na původním webu. Majitel musí potvrdit, že je firma všechny nabízí.
 6. **Transparentní ceny**: web to tvrdí, ale žádnou cenu neuvádí. Rozhodnutí je na majiteli.
