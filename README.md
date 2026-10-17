@@ -58,6 +58,17 @@ Všechny nepotvrzené údaje jsou v textu označené žlutě, např. **[ověřit
 7. **Cílový e-mail/kanál pro poptávky ze stránek SVJ a Developeři**: zatím nerozhodnuto (jen připravené proměnné `JANAK_LEAD_ENDPOINT_SVJ` a `JANAK_LEAD_ENDPOINT_DEVELOPERI`), teď šlo jen o grafický návrh.
 8. ~~Pracovní doba~~ – **ověřeno 9. 10. 2026 na vlastním webu i firmy.cz: Po–Pá 08:00–18:00, mimo to dle domluvy.** Havárie/24/7 na původním webu zmíněné, ale v rozporu s uvedenou dobou – záměrně nepřevzato (viz redesign bez havárie jako hlavního CTA).
 
+## Fotogalerie
+
+Fotky se hází do složek `assets/img/galerie/<kategorie>/` (`voda`, `topeni`, `kanalizace`, `koupelny`). Název souboru je popisek fotky. Pak stačí spustit `python3 tools/build_galerie.py`, který fotky zmenší (náhled i velká verze), uklidí a přepíše mřížku ve `fotogalerie.html` včetně filtru kategorií. Prázdné kategorie se ve filtru nezobrazují.
+
+## Nástroje (složka `tools/`)
+
+- `sync_layout.py` – hlavička, mobilní menu a patička jsou ve `partials/`. Po úpravě spustit, propíše se do všech stránek.
+- `build_galerie.py` – sestaví fotogalerii ze složek (viz výše).
+- `seo.py <doména> [--launch]` – canonical, og:image, sitemap.xml, robots.txt; s `--launch` odstraní `noindex`. Spustit až s ostrou doménou.
+- Google Ads tag: v `assets/js/mereni.js` doplnit `ADS_ID` (AW-…) a štítky konverzí `ADS_LABELS`. Do té doby se tag nenačítá.
+
 ## Technické poznámky
 
 - Stránky mají `noindex`. Před nasazením odstranit (`<meta name="robots">`).

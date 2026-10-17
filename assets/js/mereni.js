@@ -3,6 +3,10 @@
 // návštěvník neklikne "Přijmout měření". Na localhostu se gtag.js vůbec nenačítá.
 (function () {
   var GA4_ID = 'G-E4GBFEEDG0';
+  // Google Ads: doplnit ID účtu (AW-XXXXXXXXX) a štítky konverzí z Google Ads
+  // (Cíle > Konverze > Webová stránka > Nastavení značky). Prázdné = Ads tag se nenačítá.
+  var ADS_ID = '';
+  var ADS_LABELS = { phone_click: '', generate_lead: '' };
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
@@ -27,6 +31,7 @@
     document.head.appendChild(s);
     gtag('js', new Date());
     gtag('config', GA4_ID);
+    if (ADS_ID) gtag('config', ADS_ID);
   }
 
   // Napojení formuláře na Telegram (outputs/lead-telegram-automation). [doplnit] až bude
@@ -72,6 +77,7 @@
     if (readConsent() !== 'granted') return;
     var data = Object.assign({ page_path: page }, params);
     gtag('event', name, data);
+    if (ADS_ID && ADS_LABELS[name] && !local) gtag('event', 'conversion', { send_to: ADS_ID + '/' + ADS_LABELS[name] });
     if (local) console.info('[měření]', name, data);
   }
 
