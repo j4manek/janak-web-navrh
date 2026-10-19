@@ -394,3 +394,11 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 .rating-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; margin-top: 1rem; }
 .rating-write { display: inline-flex; align-items: center; height: 2.75rem; padding: 0 1.25rem; border-radius: 0.375rem; font-weight: 600; font-size: 0.9rem; background: #40DCE0; color: #0a0a0a; border: 1.5px solid #0a0a0a; text-decoration: none; }
 .rating-write:hover { filter: brightness(0.95); }
+
+/* Mobil: hero nesmí být roztažený na výšku obrazovky, tlačítka přes celou šířku pro palec */
+@media (max-width: 1023px) {
+  .hero-xl { min-height: 0; padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .hero-xl a[data-tel-loc="hero"], .hero-xl a[data-cta="hero_poptavka"] { display: flex; width: 100% !important; height: 3rem; font-size: 1rem; }
+  .hero-xl .flex-col.sm\:flex-row { align-items: stretch; }
+  .hero-xl .flex-col.sm\:flex-row > .flex-col { width: 100%; }
+}
