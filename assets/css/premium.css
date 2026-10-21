@@ -178,7 +178,7 @@ html.js-reveal .pm-reveal.is-visible { opacity: 1; transform: translateY(0); }
 .sd-media__stamp { position: absolute; right: 1rem; top: .9rem; display: flex; align-items: flex-end; gap: .25rem; max-width: 7.5rem; font: italic 600 1.05rem/1.1 "Bradley Hand", "Segoe Script", "Comic Sans MS", cursive; color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, .45); }
 .sd-media__stamp svg { flex: none; width: 1.8rem; height: 1.8rem; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .45)); }
 @media (min-width: 64rem) {
-  .sd-hero__grid { grid-template-columns: 1fr; max-width: 80rem; } /* stejná šířka jako hlavička, text je zarovnaný s logem a vpravo zbývá víc místa pro fotky */
+  .sd-hero__grid { grid-template-columns: 1fr; max-width: none; padding-left: 2.5rem; } /* text těsně u levého okraje, vpravo zbývá víc místa pro fotky */
   .sd-hero__txt { max-width: 33rem; position: relative; z-index: 2; }
   .sd-lede { max-width: 32rem; }
   .sd-hero__media { position: absolute; right: 0; top: 0; bottom: 0; width: 58%; height: auto; margin: 0; z-index: 1; }
