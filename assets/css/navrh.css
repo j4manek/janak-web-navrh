@@ -493,9 +493,10 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 
 /* Kde působíme a O nás podle návrhu Robina Janaka (měkké karty bez rámečku, modrý akcent, světle modré kraje) */
 .where, .about { display: grid; gap: 1.5rem; padding: 1.5rem; border-radius: 1rem; background: #fbfdfe; box-shadow: 0 6px 28px rgba(16, 36, 58, .07); }
-@media (min-width: 64rem) { .where, .about { padding: 2rem 2.5rem; gap: 2rem; } .where { grid-template-columns: 1.15fr 1.4fr .9fr; align-items: center; } .about { grid-template-columns: 1.05fr 1fr; align-items: center; } }
+@media (min-width: 64rem) { .where, .about { padding: 2rem 2.5rem; gap: 2rem; } .where { grid-template-columns: .95fr 1.65fr .85fr; align-items: center; } .about { grid-template-columns: 1.05fr 1fr; align-items: center; } }
 .where__title, .about__title { font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; color: #10243A; margin: 0; }
 .hl { color: #2db5ee; }
+.where__title { white-space: nowrap; }
 .where__lead { margin: 1rem 0 1.25rem; font-size: 1.2rem; line-height: 1.4; color: #10243A; }
 .where__box { display: flex; gap: .85rem; align-items: center; padding: .9rem 1.1rem; border: 1px solid #e3eaef; border-radius: .6rem; background: #fff; }
 .where__box strong { display: block; color: #10243A; font-size: 1rem; }
