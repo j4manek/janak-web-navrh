@@ -493,7 +493,7 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 
 /* Kde působíme a O nás podle návrhu Robina Janaka (měkké karty bez rámečku, modrý akcent, světle modré kraje) */
 .where, .about { display: grid; gap: 1.5rem; padding: 1.5rem; border-radius: 1rem; background: #fbfdfe; box-shadow: 0 6px 28px rgba(16, 36, 58, .07); }
-@media (min-width: 64rem) { .where, .about { padding: 2rem 2.5rem; gap: 2rem; } .where { grid-template-columns: .95fr 1.65fr .85fr; align-items: center; } .about { grid-template-columns: 1.05fr 1fr; align-items: center; } }
+@media (min-width: 64rem) { .where, .about { padding: 2rem 2.5rem; gap: 2rem; } .where { grid-template-columns: .85fr 1.7fr 1.05fr; align-items: center; } .about { grid-template-columns: 1.05fr 1fr; align-items: center; } }
 .where__title, .about__title { font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; color: #10243A; margin: 0; }
 .hl { color: #2db5ee; }
 .where__title { white-space: nowrap; }
@@ -531,3 +531,10 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 .ap-b { grid-column: 2 / 4; grid-row: 1; }
 .ap-c { grid-column: 2; grid-row: 2; }
 .ap-d { grid-column: 3; grid-row: 2; }
+
+/* Kde působíme + O nás jako jeden souvislý blok (návrh Robina Janaka): dva panely těsně pod sebou na společném světlém pozadí */
+.wa-band { margin: 0; padding: 2rem 0; background: #f2f6f9; }
+@media (min-width: 64rem) { .wa-band { padding: 2.5rem 0; } }
+.wa-band .where, .wa-band .about { background: #fbfdfe; box-shadow: 0 2px 14px rgba(16, 36, 58, .05); }
+.wa-band .where + .about { margin-top: 1.25rem; }
+.wa-band .about { scroll-margin-top: 6rem; }
