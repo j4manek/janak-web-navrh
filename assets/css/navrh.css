@@ -494,35 +494,35 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 /* Kde působíme a O nás podle návrhu Robina Janaka (měkké karty bez rámečku, modrý akcent, světle modré kraje) */
 .where, .about { display: grid; gap: 1.5rem; padding: 1.5rem; border-radius: 1rem; background: #fbfdfe; box-shadow: 0 6px 28px rgba(16, 36, 58, .07); }
 @media (min-width: 64rem) { .where, .about { padding: 2rem 2.5rem; gap: 2rem; } .where { grid-template-columns: .85fr 1.7fr 1.05fr; align-items: center; } .about { grid-template-columns: 1.05fr 1fr; align-items: center; } }
-.where__title, .about__title { font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; color: #10243A; margin: 0; }
-.hl { color: #2db5ee; }
+.where__title, .about__title { font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; color: var(--ui-text-highlighted); margin: 0; }
+.hl { color: #40DCE0; -webkit-text-stroke: 1px #0a0a0a; paint-order: stroke fill; }
 .where__title { white-space: nowrap; }
-.where__lead { margin: 1rem 0 1.25rem; font-size: 1.2rem; line-height: 1.4; color: #10243A; }
+.where__lead { margin: 1rem 0 1.25rem; font-size: 1.2rem; line-height: 1.4; color: var(--ui-text-highlighted); }
 .where__box { display: flex; gap: .85rem; align-items: center; padding: .9rem 1.1rem; border: 1px solid #e3eaef; border-radius: .6rem; background: #fff; }
-.where__box strong { display: block; color: #10243A; font-size: 1rem; }
-.where__box span { display: block; color: #10243A; }
+.where__box strong { display: block; color: var(--ui-text-highlighted); font-size: 1rem; }
+.where__box span { display: block; color: var(--ui-text-highlighted); }
 .where__box small { display: block; margin-top: .3rem; color: #5b6b7b; font-size: .8rem; line-height: 1.4; }
-.where__ico, .where__btnico, .wi, .about__ico { flex: none; fill: none; stroke: #10243A; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.where__ico, .where__btnico, .wi, .about__ico { flex: none; fill: none; stroke: var(--ui-text-highlighted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .where__ico { width: 2.9rem; height: 2.9rem; padding: .65rem; border-radius: 50%; background: #d9f6fd; box-sizing: border-box; }
-.where__btn { display: inline-flex; align-items: center; justify-content: space-between; gap: .7rem; margin-top: 1rem; min-height: 3.1rem; padding: 0 1.25rem; border-radius: .5rem; font-weight: 700; background: #4fd8f2; color: #10243A; text-decoration: none; min-width: 15rem; }
+.where__btn { display: inline-flex; align-items: center; justify-content: space-between; gap: .7rem; margin-top: 1rem; min-height: 3.1rem; padding: 0 1.25rem; border-radius: .5rem; font-weight: 700; background: #40DCE0; color: #0a0a0a; border: 1.5px solid #0a0a0a; text-decoration: none; min-width: 15rem; }
 .where__btn:hover { filter: brightness(.96); }
 .where__btnico { width: 1.15rem; height: 1.15rem; margin-right: -.2rem; }
 .where__btn span { margin-left: auto; font-size: 1.4rem; line-height: 1; }
 .where__map { width: 100%; height: auto; display: block; }
 .where__more { padding-top: 1.25rem; border-top: 1px solid #e3eaef; }
 @media (min-width: 64rem) { .where__more { padding: 0 0 0 1.75rem; border-top: 0; border-left: 1px solid #cfe0ea; } }
-.where__more h3 { font-size: 1.15rem; font-weight: 800; color: #10243A; margin: 0 0 .55rem; }
+.where__more h3 { font-size: 1.15rem; font-weight: 800; color: var(--ui-text-highlighted); margin: 0 0 .55rem; }
 .where__more p { margin: 0 0 1rem; color: #4a5a6a; font-size: .95rem; line-height: 1.55; }
 .where__more ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
-.where__more li { display: flex; align-items: center; gap: .85rem; padding: .8rem 1rem; border-radius: .7rem; background: #f3f7fa; font-weight: 700; color: #10243A; }
+.where__more li { display: flex; align-items: center; gap: .85rem; padding: .8rem 1rem; border-radius: .7rem; background: #f3f7fa; font-weight: 700; color: var(--ui-text-highlighted); }
 .where__chev { margin-left: auto; font-size: 1.5rem; line-height: 1; font-weight: 600; }
 .wi { width: 1.7rem; height: 1.7rem; stroke: #0b7f86; }
 .about__txt p { margin: 1rem 0 0; color: #4a5a6a; line-height: 1.6; font-size: 1.05rem; max-width: 38rem; }
 .about__vals { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: 1.25rem; }
 @media (min-width: 40rem) { .about__vals { grid-template-columns: repeat(3, 1fr); gap: 0; } .about__vals li + li { border-left: 1px solid #cfe0ea; } }
 .about__vals li { display: flex; flex-direction: column; gap: .3rem; align-items: center; text-align: center; padding: 0 .75rem; }
-.about__ico { width: 3.4rem; height: 3.4rem; padding: .8rem; border-radius: 50%; background: #d9f6fd; box-sizing: border-box; margin-bottom: .35rem; stroke: #2db5ee; }
-.about__vals strong { color: #10243A; font-size: 1.05rem; }
+.about__ico { width: 3.4rem; height: 3.4rem; padding: .8rem; border-radius: 50%; background: #d9f6fd; box-sizing: border-box; margin-bottom: .35rem; stroke: #0b7f86; }
+.about__vals strong { color: var(--ui-text-highlighted); font-size: 1.05rem; }
 .about__vals span { color: #4a5a6a; font-size: .92rem; line-height: 1.4; }
 .about__photos { display: grid; gap: .75rem; grid-template-columns: 1.2fr .5fr .5fr; grid-template-rows: 11rem 11rem; }
 @media (min-width: 64rem) { .about__photos { grid-template-rows: 14rem 14rem; } }
