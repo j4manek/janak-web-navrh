@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if len(sys.argv) < 2 or not sys.argv[1].startswith('http'):
     sys.exit(__doc__)
 base = sys.argv[1].rstrip('/'); launch = '--launch' in sys.argv
-SKIP = {'ochrana-soukromi.html', 'zasady-cookies.html'}
+SKIP = {'ochrana-soukromi.html', 'zasady-cookies.html', 'svj-bytove-domy.html', 'developeri.html'}
 urls = []
 for f in sorted(ROOT.glob('*.html')):
     s = f.read_text(); url = base + ('/' if f.name == 'index.html' else '/' + f.name)
