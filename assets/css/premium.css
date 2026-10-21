@@ -153,7 +153,7 @@ html.js-reveal .pm-reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 .sd-hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(ellipse 80% 90% at 85% 10%, #1b4466 0%, transparent 60%), linear-gradient(135deg, #0a1a2c 0%, var(--sd-navy) 55%, #0d2f4d 100%); }
 .sd-hero__grid { display: grid; gap: 2rem; padding-top: 3rem; padding-bottom: 3rem; align-items: center; }
-@media (min-width: 64rem) { .sd-hero__grid { grid-template-columns: 1.15fr .85fr; gap: 3rem; padding-top: 4.5rem; padding-bottom: 4.5rem; } }
+@media (min-width: 64rem) { .sd-hero__grid { grid-template-columns: 1.1fr .9fr; gap: 3rem; padding-top: 4.5rem; padding-bottom: 4.5rem; } }
 .sd-kicker { display: inline-flex; align-items: center; gap: .7rem; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #fff; }
 .sd-kicker::before { content: ""; width: 2.2rem; height: 2px; background: var(--sd-teal); }
 .sd-title { font-size: clamp(2.2rem, 5vw, 3.7rem); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; margin: 1.1rem 0 1.25rem; color: #fff; }
@@ -169,10 +169,14 @@ html.js-reveal .pm-reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (min-width: 40rem) { .sd-points { grid-template-columns: repeat(3, auto); justify-content: start; gap: 1.75rem; } }
 .sd-points li { display: flex; align-items: center; gap: .7rem; font-size: .88rem; line-height: 1.3; max-width: 13rem; }
 .sd-points svg, .sd-strip svg { flex: none; width: 2.2rem; height: 2.2rem; fill: none; stroke: var(--sd-teal); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.sd-hero__img { position: relative; margin: 0; align-self: stretch; min-height: 16rem; border-radius: .75rem; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, .35); }
-@media (min-width: 64rem) { .sd-hero__img { clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%); border-radius: 0; min-height: 26rem; box-shadow: none; } }
-.sd-hero__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.sd-hero__img figcaption { position: absolute; right: 1rem; top: 1rem; padding: .35rem .8rem; border-radius: 2rem; font-size: .85rem; font-weight: 600; color: #fff; background: rgba(16, 36, 58, .75); backdrop-filter: blur(4px); }
+.sd-hero__media { position: relative; width: 100%; max-width: 34rem; margin: 0 auto; aspect-ratio: 1.15 / 1; }
+@media (min-width: 64rem) { .sd-hero__media { max-width: none; } }
+/* panelák vzadu s plynulým přechodem do tmavého pozadí, fotka rozvodů vpředu se šikmou hranou (překryv podle Robinova návrhu) */
+.sd-media__bg { position: absolute; left: 0; top: 0; width: 66%; height: 100%; object-fit: cover; border-radius: .75rem; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 32%); mask-image: linear-gradient(90deg, transparent 0, #000 32%); }
+.sd-media__fg { position: absolute; right: 0; top: 0; bottom: 0; width: 52%; margin: 0; overflow: hidden; clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); border-radius: 0 .75rem .75rem 0; }
+.sd-media__fg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sd-media__fg figcaption { position: absolute; right: .75rem; top: .75rem; padding: .3rem .75rem; border-radius: 2rem; font-size: .8rem; font-weight: 600; color: #fff; background: rgba(16, 36, 58, .75); }
+.sd-hero__media::after { content: ""; position: absolute; top: 0; bottom: 0; right: 52%; width: 5px; background: #fff; transform: skewX(-5.5deg); transform-origin: bottom; z-index: 1; }
 
 .sd-strip { background: var(--sd-grey); border-bottom: 1px solid var(--ui-border); }
 .sd-strip__grid { list-style: none; display: grid; gap: 1.5rem; padding-top: 2rem; padding-bottom: 2rem; margin: 0 auto; }
