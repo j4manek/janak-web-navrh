@@ -333,3 +333,96 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 .sv-btn--send { min-height: 3.2rem; padding: 0 1.8rem; font-size: 1rem; }
 .sv-form__send small { font-size: .8rem; color: var(--ui-text-muted); }
 .sv-thanks { margin: 1rem 0 0; font-weight: 600; color: var(--ui-text-highlighted); }
+
+/* ============================================================
+   SVJ stránka: barvy a vzhled přesně podle Robina Janaka
+   (#40DCE0 tyrkysová, #10243A námořnická, #F4F8F9 světle šedá).
+   Hlavní stránka a ostatní stránky zůstávají ve vlastním vzhledu.
+   ============================================================ */
+.sv-sec { border-top: 0; padding: 0; }
+.sv-why, .sv-how { background: #fff; }
+.sv-what, .sv-real, .sv-contact { background: #F4F8F9; }
+.sv-head { margin: 0; padding: 3rem 0 2rem; }
+.sv-head .sv-label { color: #10243A; }
+.sv-label::before { background: #40DCE0; }
+.sv-h2 { color: #10243A; }
+.sv-h2 em, .sv-faq__h em { color: #40DCE0; -webkit-text-stroke: 0; }
+.sv-sub { color: #5b6b7b; }
+.sv-head--dark { background: radial-gradient(ellipse 60% 120% at 85% 0%, #1b4466 0%, transparent 60%), linear-gradient(135deg, #0a1a2c 0%, #10243A 55%, #0d2f4d 100%); padding: 3.25rem 0 3rem; margin-bottom: 2.25rem; }
+.sv-head--dark .sv-label { color: #fff; }
+.sv-head--dark .sv-h2 { color: #fff; }
+.sv-head--dark .sv-sub { color: rgba(255, 255, 255, .85); }
+
+.sv-navy { background: linear-gradient(180deg, #0b1d31, #10243A); padding: 2.5rem 0 3rem; }
+.sv-card--dark { background: #0f2b47; border: 1px solid rgba(64, 220, 224, .3); box-shadow: none; }
+.sv-card--dark::before { display: none; }
+.sv-card--dark .sv-card__i { background: #40DCE0; border: 0; stroke: #10243A; }
+.sv-card--dark .sv-card__n { color: #40DCE0; font-size: 1rem; }
+.sv-card--dark h3 { color: #fff; }
+.sv-card--dark p { color: rgba(255, 255, 255, .82); }
+.sv-card--light { border-color: #e1eaef; box-shadow: 0 2px 10px rgba(16, 36, 58, .06); }
+.sv-card--light::before { display: none; }
+.sv-card--light .sv-card__i--round { background: #dff8f9; stroke: #10243A; }
+.sv-card--light .sv-card__n { color: #40DCE0; font-size: 1.15rem; }
+.sv-card--light h3 { color: #10243A; }
+
+.sv-btn { background: #40DCE0; color: #10243A; border: 0; }
+.sv-btn__i { stroke: #10243A; }
+.sv-banner { background: #0f2b47; border: 1px solid rgba(64, 220, 224, .3); }
+.sv-navy .sv-banner { background: #0c2540; }
+.sv-banner__i { background: #40DCE0; border: 0; stroke: #10243A; }
+.sv-banner__txt strong { color: #fff; }
+.sv-banner__txt span { color: rgba(255, 255, 255, .8); }
+.sv-banner__link { color: #40DCE0; }
+
+.sv-step { border-color: #e1eaef; box-shadow: 0 2px 10px rgba(16, 36, 58, .06); }
+.sv-step__n { background: #10243A; border: 0; color: #fff; }
+.sv-step__i { background: #dff8f9; stroke: #10243A; }
+.sv-step h3 { color: #10243A; }
+@media (min-width: 64rem) { .sv-step:not(:last-child)::after { border-top: 2px dotted #40DCE0; } }
+
+.sv-head--dark .sv-points strong { color: #fff; }
+.sv-head--dark .sv-points span { color: rgba(255, 255, 255, .75); }
+.sv-head--dark .sv-points svg { background: rgba(64, 220, 224, .15); stroke: #40DCE0; }
+.sv-head--dark .sv-chip { background: transparent; border: 1px solid rgba(255, 255, 255, .35); color: #fff; }
+.sv-head--dark .sv-chip:hover { border-color: #40DCE0; }
+.sv-head--dark .sv-chip.is-active { background: #40DCE0; border-color: #40DCE0; color: #10243A; }
+.sv-head--dark .sv-chip--more { border-color: #40DCE0; color: #40DCE0; }
+.sv-proj { border-color: #e1eaef; }
+.sv-proj__top { background: linear-gradient(135deg, #10243A, #1b4466); }
+.sv-proj__i { stroke: #40DCE0; opacity: .8; }
+.sv-proj__pin { background: rgba(255, 255, 255, .95); color: #10243A; }
+.sv-proj h3 { color: #10243A; }
+.sv-proj__tags li { background: #eaf3f6; color: #10243A; }
+.sv-quote { border-left-color: #40DCE0; }
+.sv-quote p { color: #10243A; }
+.sv-sum { background: #e8fbfc; border-color: #bdeff2; }
+.sv-sum svg { background: #cdf3f7; stroke: #10243A; }
+.sv-sum strong { color: #10243A; }
+
+.sv-contact__top { background: radial-gradient(ellipse 60% 100% at 90% 0%, #1b4466 0%, transparent 60%), linear-gradient(135deg, #0a1a2c 0%, #10243A 55%, #0d2f4d 100%); padding: 3.5rem 0 7rem; }
+.sv-contact__l .sv-label { color: #fff; }
+.sv-contact__l .sv-h2 { color: #fff; }
+.sv-contact__l .sv-sub { color: rgba(255, 255, 255, .85); }
+.sv-cinfo li { background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .15); box-shadow: none; }
+.sv-cinfo svg { background: rgba(64, 220, 224, .15); border: 0; stroke: #40DCE0; }
+.sv-cinfo span, .sv-cinfo small { color: rgba(255, 255, 255, .72); }
+.sv-cinfo a, .sv-cinfo strong { color: #fff; }
+.sv-faq { background: #0f2b47; border: 1px solid rgba(64, 220, 224, .28); }
+.sv-faq .sv-label { color: #fff; }
+.sv-faq__h { color: #fff; }
+.sv-faq__item { background: rgba(255, 255, 255, .05); border-color: rgba(255, 255, 255, .15); }
+.sv-faq__item summary { color: #fff; }
+.sv-faq__chev { stroke: #40DCE0; }
+.sv-faq__item p { color: rgba(255, 255, 255, .82); }
+.sv-formband { position: relative; z-index: 2; margin-top: -4.5rem; margin-bottom: 3rem; background: #eaf8fb; border: 0; box-shadow: 0 14px 40px rgba(10, 26, 44, .22); }
+.sv-formband__i { background: #cdf3f7; stroke: #10243A; }
+.sv-formband__intro h3 { color: #10243A; }
+.sv-input { border-color: #d3e3e9; }
+.sv-input:focus { outline-color: #40DCE0; border-color: #40DCE0; }
+.sv-field span { color: #10243A; }
+.sv-checks { color: #10243A; }
+.sv-checks svg { fill: #40DCE0; stroke: #10243A; }
+.sv-gdpr a { color: #0b7f86; }
+.sv-btn--send { background: #40DCE0; color: #10243A; }
+.sv-thanks { color: #10243A; }
