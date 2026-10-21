@@ -491,19 +491,39 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 .help-box strong { display: block; font-size: 1.1rem; color: var(--ui-text-highlighted); }
 .help-box p { margin: .3rem 0 .8rem; color: var(--ui-text-muted); font-size: .95rem; }
 
-/* Kde působíme: mapa ČR s kraji + text o větších projektech */
-.area-wide { display: grid; gap: 1.5rem; align-items: center; max-width: 60rem; margin: 0 auto; padding: 1.25rem; border-radius: .75rem; border: 1px solid var(--ui-border); background: var(--ui-bg, #fff); box-shadow: 0 2px 12px rgba(15, 23, 42, .06); }
-@media (min-width: 768px) { .area-wide { grid-template-columns: 1.15fr 1fr; padding: 1.75rem; gap: 2rem; } }
-.area-wide__map { width: 100%; height: auto; display: block; }
-.area-wide__txt { display: grid; gap: 1.1rem; }
-.area-wide__txt h3 { font-weight: 800; font-size: 1.05rem; color: var(--ui-text-highlighted); margin: 0 0 .2rem; }
-.area-wide__txt p { margin: 0; color: var(--ui-text-muted); font-size: .95rem; }
-.area-wide__txt .map-embed--mini { max-width: 20rem; }
-
-/* Kde působíme: kompaktnější, ať mapa a text netvoří velké prázdné místo */
-#oblast { padding-top: 2.5rem; padding-bottom: 2.5rem; margin-top: 0; margin-bottom: 0; }
-@media (min-width: 768px) { .area-wide { grid-template-columns: 1fr 1fr; padding: 1.25rem 1.5rem; gap: 1.25rem; align-items: center; } }
-.area-wide__map { max-width: 26rem; margin: 0 auto; }
-.area-wide__txt { gap: .8rem; }
-.area-wide__txt .map-embed--mini { max-width: none; }
-.area-wide__txt .map-embed--mini .map-embed__ph { min-height: 0; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: .5rem 1rem; padding: .6rem .8rem; }
+/* Kde působíme a O nás podle návrhu Robina Janaka */
+.where, .about { display: grid; gap: 1.5rem; padding: 1.5rem; border-radius: .9rem; background: #fff; border: 1px solid var(--ui-border); box-shadow: 0 4px 20px rgba(15, 23, 42, .07); }
+@media (min-width: 64rem) { .where, .about { padding: 2rem 2.25rem; gap: 2rem; } .where { grid-template-columns: 1fr 1.25fr 1fr; align-items: center; } .about { grid-template-columns: 1.05fr 1fr; align-items: center; } }
+.where__title, .about__title { font-size: clamp(1.9rem, 3.3vw, 2.7rem); font-weight: 800; line-height: 1.08; color: #10243A; margin: 0; }
+.where__lead { margin: .9rem 0 1.1rem; font-size: 1.1rem; color: #10243A; }
+.where__box { display: flex; gap: .8rem; align-items: flex-start; padding: .9rem 1rem; border: 1px solid var(--ui-border); border-radius: .6rem; background: #f4f8f9; }
+.where__box strong { display: block; color: #10243A; }
+.where__box span { display: block; color: var(--ui-text-muted); }
+.where__box small { display: block; margin-top: .3rem; color: var(--ui-text-muted); font-size: .8rem; line-height: 1.4; }
+.where__ico, .where__btnico, .wi, .about__ico { flex: none; fill: none; stroke: #0b7f86; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.where__ico { width: 2.2rem; height: 2.2rem; padding: .45rem; border-radius: 50%; background: #dff8f9; box-sizing: border-box; }
+.where__btn { display: inline-flex; align-items: center; gap: .55rem; margin-top: 1rem; min-height: 2.9rem; padding: 0 1.25rem; border-radius: .5rem; font-weight: 700; background: #40DCE0; color: #0a0a0a; border: 1.5px solid #0a0a0a; text-decoration: none; }
+.where__btn:hover { filter: brightness(.95); }
+.where__btnico { width: 1.15rem; height: 1.15rem; stroke: #0a0a0a; }
+.where__map { width: 100%; height: auto; display: block; }
+.where__more { padding-top: 1.25rem; border-top: 1px solid var(--ui-border); }
+@media (min-width: 64rem) { .where__more { padding: 0 0 0 1.75rem; border-top: 0; border-left: 1px solid var(--ui-border); } }
+.where__more h3 { font-size: 1.2rem; font-weight: 800; color: #10243A; margin: 0 0 .5rem; }
+.where__more p { margin: 0 0 1rem; color: var(--ui-text-muted); font-size: .95rem; line-height: 1.55; }
+.where__more ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.where__more li { display: flex; align-items: center; gap: .75rem; padding: .7rem .9rem; border-radius: .6rem; background: #f4f8f9; font-weight: 600; color: #10243A; }
+.wi { width: 1.6rem; height: 1.6rem; }
+.about__txt p { margin: .9rem 0 0; color: var(--ui-text-muted); line-height: 1.6; max-width: 36rem; }
+.about__vals { list-style: none; margin: 1.6rem 0 0; padding: 1.1rem 0 0; display: grid; gap: 1rem; border-top: 1px solid var(--ui-border); }
+@media (min-width: 40rem) { .about__vals { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.about__vals li { display: flex; flex-direction: column; gap: .25rem; align-items: flex-start; }
+.about__ico { width: 3rem; height: 3rem; padding: .7rem; border-radius: 50%; background: #dff8f9; box-sizing: border-box; margin-bottom: .2rem; }
+.about__vals strong { color: #10243A; }
+.about__vals span { color: var(--ui-text-muted); font-size: .9rem; line-height: 1.4; }
+.about__photos { display: grid; gap: .75rem; grid-template-columns: 1.2fr .5fr .5fr; grid-template-rows: 11rem 11rem; }
+@media (min-width: 64rem) { .about__photos { grid-template-rows: 13rem 13rem; } }
+.about__photos img { width: 100%; height: 100%; object-fit: cover; border-radius: .7rem; display: block; }
+.ap-a { grid-column: 1; grid-row: 1 / 3; }
+.ap-b { grid-column: 2 / 4; grid-row: 1; }
+.ap-c { grid-column: 2; grid-row: 2; }
+.ap-d { grid-column: 3; grid-row: 2; }

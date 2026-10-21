@@ -175,7 +175,7 @@ html.js-reveal .pm-reveal.is-visible { opacity: 1; transform: translateY(0); }
 .sd-media__edge, .sd-media__bg { position: absolute; right: 0; top: 0; height: 100%; }
 .sd-media__edge { width: calc(52% + 6px); background: #fff; clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
 .sd-media__bg { width: 52%; object-fit: cover; clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
-.sd-media__stamp { position: absolute; right: 1rem; top: .9rem; display: flex; align-items: flex-end; gap: .25rem; max-width: 7.5rem; font: italic 600 1.05rem/1.1 "Bradley Hand", "Segoe Script", "Comic Sans MS", cursive; color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, .45); }
+.sd-media__stamp { position: absolute; right: 1rem; top: .9rem; display: flex; align-items: flex-end; gap: .25rem; max-width: 7.5rem; font: italic 600 1.05rem/1.1 "Bradley Hand", "Segoe Script", "Comic Sans MS", cursive; color: #fff; padding: .35rem .7rem; border-radius: .6rem; background: rgba(16, 36, 58, .72); }
 .sd-media__stamp svg { flex: none; width: 1.8rem; height: 1.8rem; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .45)); }
 @media (min-width: 64rem) {
   .sd-hero__grid { grid-template-columns: 1fr; max-width: none; padding-left: 2.5rem; } /* text těsně u levého okraje, vpravo zbývá víc místa pro fotky */
@@ -196,3 +196,15 @@ html.js-reveal .pm-reveal.is-visible { opacity: 1; transform: translateY(0); }
 .sd-strip svg { width: 3rem; height: 3rem; padding: .7rem; border-radius: 50%; background: #dff8f9; stroke: #0b7f86; box-sizing: border-box; }
 .sd-strip strong { display: block; color: var(--sd-navy); font-weight: 700; line-height: 1.25; }
 .sd-strip span { display: block; margin-top: .15rem; font-size: .88rem; color: var(--ui-text-muted); line-height: 1.4; }
+
+/* Postup jako tmavá sekce, tyrkysová čísla (návrh Robina Janaka) */
+.pm-page #postup { background: var(--sd-navy); border-top: 0; }
+.pm-page #postup .pm-h2 { color: #fff !important; }
+.pm-page #postup .pm-kicker { color: var(--sd-teal); }
+.pm-page #postup .pm-kicker::before { background: var(--sd-teal); }
+.pm-page #postup .pm-process { background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .14); }
+.pm-page #postup .pm-process__step { background: #16314d; }
+.pm-page #postup .pm-process__num { color: var(--sd-teal); }
+.pm-page #postup .pm-process__title { color: #fff; }
+.pm-page #postup .pm-process__desc { color: rgba(255, 255, 255, .78); }
+.pm-page #faq { border-top: 0; }
