@@ -434,3 +434,95 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 .sv-proj--small .sv-proj__ph { padding: .25rem .7rem; font-size: .78rem; }
 .sv-sum ul { flex: 1 1 100%; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 @media (min-width: 64rem) { .sv-sum ul { flex: 1 1 0; grid-template-columns: repeat(4, auto); } }
+
+/* Telefon: hustší SVJ stránka (méně scrollování, pořád přehledně) */
+@media (max-width: 639px) {
+  .sd-hero__grid { padding-top: 1.75rem; padding-bottom: 1.25rem; gap: 1rem; }
+  .sd-title { font-size: 1.85rem; margin: .7rem 0 .8rem; }
+  .sd-lede { font-size: .95rem; line-height: 1.5; }
+  .sd-cta { margin-top: 1.1rem; gap: .5rem; }
+  .sd-btn { min-height: 2.8rem; padding: 0 1rem; font-size: .92rem; flex: 1 1 auto; }
+  .sd-points { margin-top: 1.1rem; gap: .6rem; grid-template-columns: 1fr; }
+  .sd-points li { max-width: none; font-size: .85rem; }
+  .sd-points svg { width: 1.7rem; height: 1.7rem; }
+  .sd-hero__media { height: 11rem; margin-top: 0; }
+  .sd-strip__grid { grid-template-columns: 1fr 1fr; gap: .75rem; padding-top: 1.1rem; padding-bottom: 1.1rem; }
+  .sd-strip li { flex-direction: column; align-items: flex-start; gap: .4rem; }
+  .sd-strip svg { width: 2.3rem; height: 2.3rem; padding: .5rem; }
+  .sd-strip strong { font-size: .88rem; }
+  .sd-strip span { font-size: .76rem; }
+  .sv-head { padding: 1.75rem 0 1.1rem; }
+  .sv-head--dark { padding: 1.75rem 0 1.5rem; margin-bottom: 1.1rem; }
+  .sv-h2 { font-size: 1.55rem; margin: .5rem 0 .6rem; }
+  .sv-sub { font-size: .92rem; line-height: 1.5; }
+  .sv-navy { padding: 1.25rem 0 1.5rem; }
+  .sv-how, .sv-what, .sv-real { padding-bottom: 1.75rem; }
+  .sv-grid { gap: .6rem; }
+  .sv-card { padding: .85rem; gap: .7rem; }
+  .sv-card__i { width: 2.3rem; height: 2.3rem; padding: .5rem; }
+  .sv-card h3 { font-size: .95rem; margin-bottom: .25rem; }
+  .sv-card p { font-size: .84rem; line-height: 1.45; }
+  .sv-grid--tight { grid-template-columns: 1fr 1fr; }
+  .sv-grid--tight .sv-card { flex-direction: column; gap: .45rem; }
+  .sv-grid--tight .sv-card p { font-size: .78rem; }
+  .sv-grid--tight .sv-card h3 { font-size: .88rem; }
+  .sv-banner { margin-top: 1rem; padding: .85rem 1rem; gap: .6rem .8rem; }
+  .sv-banner__i { width: 2.4rem; height: 2.4rem; padding: .55rem; }
+  .sv-banner__txt { flex-basis: 10rem; }
+  .sv-banner__txt strong { font-size: 1rem; }
+  .sv-banner__txt span { font-size: .8rem; }
+  .sv-banner .sv-btn { width: 100%; }
+  .sv-steps { gap: .5rem; }
+  .sv-step { display: grid; grid-template-columns: auto 1fr; column-gap: .75rem; padding: .8rem .9rem; }
+  .sv-step__top { grid-row: 1 / 3; flex-direction: column; margin: 0; gap: .35rem; }
+  .sv-step__i { display: none; }
+  .sv-step h3 { margin: 0 0 .2rem; font-size: .95rem; }
+  .sv-step p { font-size: .82rem; line-height: 1.4; }
+  .sv-points { gap: .5rem; }
+  .sv-points svg { width: 2.2rem; height: 2.2rem; padding: .5rem; }
+  .sv-chips { flex-wrap: nowrap; overflow-x: auto; margin: 0 -1.25rem; padding: 0 1.25rem .4rem; scrollbar-width: none; }
+  .sv-chips::-webkit-scrollbar { display: none; }
+  .sv-chip { flex: none; min-height: 2.3rem; padding: 0 .85rem; font-size: .82rem; }
+  .sv-chip--more { margin-left: 0; }
+  .sv-projs { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .sv-proj-col { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .sv-proj__top { height: 4.2rem; }
+  .sv-proj__ph { font-size: .7rem; padding: .25rem .5rem; }
+  .sv-proj__pin { left: .4rem; bottom: .35rem; font-size: .68rem; padding: .15rem .5rem; }
+  .sv-proj__body { padding: .65rem .75rem .8rem; }
+  .sv-proj h3 { font-size: .86rem; }
+  .sv-proj p { font-size: .76rem; line-height: 1.4; }
+  .sv-proj__tags { margin-top: .5rem; gap: .25rem; }
+  .sv-proj__tags li { font-size: .68rem; padding: .12rem .5rem; }
+  .sv-quote { margin-top: 1.1rem; padding-left: 1rem; }
+  .sv-quote p { font-size: .95rem; }
+  .sv-sum { margin-top: 1.1rem; padding: .85rem 1rem; gap: .75rem; }
+  .sv-sum ul { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .sv-sum svg { width: 2.2rem; height: 2.2rem; padding: .5rem; }
+  .sv-sum span { font-size: .76rem; }
+  .sv-sum .sv-btn { width: 100%; }
+  .sv-contact__top { padding: 1.75rem 0 5rem; }
+  .sv-contact__grid { gap: 1.25rem; }
+  .sv-cinfo { margin-top: 1rem; gap: .5rem; }
+  .sv-cinfo li { padding: .65rem .8rem; gap: .65rem; }
+  .sv-cinfo svg { width: 2.4rem; height: 2.4rem; padding: .55rem; }
+  .sv-cinfo a, .sv-cinfo strong { font-size: .95rem; }
+  .sv-faq { padding: 1rem; }
+  .sv-faq__h { font-size: 1.4rem; margin: .4rem 0 .7rem; }
+  .sv-faq__item summary { padding: .65rem .8rem; font-size: .9rem; }
+  .sv-faq__item p { font-size: .85rem; padding: 0 .8rem .8rem; }
+  .sv-formband { margin-top: -3.5rem; padding: 1rem; gap: 1rem; margin-bottom: 1.5rem; }
+  .sv-formband__intro h3 { font-size: 1.25rem; }
+  .sv-formband__i { width: 2.5rem; height: 2.5rem; padding: .55rem; }
+  .sv-form__grid { gap: .6rem; }
+  .sv-input { padding: .55rem .7rem; }
+  textarea.sv-input { min-height: 4rem; }
+  .sv-btn--send { width: 100%; }
+  .sv-form__send { justify-items: stretch; text-align: center; }
+}
+@media (max-width: 639px) {
+  .sv-proj__top { height: auto; min-height: 0; padding: .55rem .5rem; flex-direction: column; gap: .3rem; display: flex; align-items: center; justify-content: center; }
+  .sv-proj__pin { position: static; }
+  .sv-proj--small .sv-proj__top { padding: .4rem .5rem; }
+  .sv-projs > .sv-proj:first-child { grid-column: 1 / -1; }
+}
