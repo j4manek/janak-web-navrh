@@ -526,3 +526,8 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
   .sv-proj--small .sv-proj__top { padding: .4rem .5rem; }
   .sv-projs > .sv-proj:first-child { grid-column: 1 / -1; }
 }
+
+/* Tyrkysový text na světlém pozadí: lehký tmavý obrys, ať nezaniká */
+.sv-how .sv-h2 em, .sv-why .sv-h2 em, .sv-faq__h em { -webkit-text-stroke: 1px #10243A; paint-order: stroke fill; }
+.sv-card--light .sv-card__n { -webkit-text-stroke: .7px #10243A; paint-order: stroke fill; }
+.sv-label { text-shadow: none; }
