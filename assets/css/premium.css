@@ -722,3 +722,16 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
   .lt-ill { font-size: .6rem; padding: .1rem .45rem; top: .35rem; right: .35rem; }
   .sv-proj__ph { position: absolute; inset: 0; margin: auto; width: fit-content; height: fit-content; }
 }
+
+/* Sekce 02-04: výraznější odlišení podkladů (méně bílé) */
+.lt-why { background: #fff; }
+.lt-how { background: linear-gradient(180deg, #d9f3f8 0%, #c7ebf3 100%); }
+.lt-what { background: linear-gradient(180deg, #e6edf3 0%, #dbe5ee 100%); }
+.lt-how .lt-step__n { background: #10243A; color: #fff; }
+.lt-how .lt-step__ic { box-shadow: 0 0 0 6px rgba(255, 255, 255, .55), 0 4px 16px rgba(16, 36, 58, .14); }
+.lt-how .lt-sub, .lt-what .lt-sub { color: #3f5568; }
+.lt-how .lt-step p { color: #3f5568; }
+.lt-what .lt-card { border-color: #d3e0ea; box-shadow: 0 6px 22px rgba(16, 36, 58, .1); }
+.lt-sec + .lt-sec { border-top: 1px solid rgba(16, 36, 58, .08); }
+.pm-page #postup.lt-how { background: linear-gradient(180deg, #d9f3f8 0%, #c7ebf3 100%); }
+.pm-page #sluzby.lt-what { background: linear-gradient(180deg, #e6edf3 0%, #dbe5ee 100%); }
