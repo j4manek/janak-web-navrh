@@ -19,10 +19,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/entry.css">
 <link rel="stylesheet" href="assets/css/inline.css">
-<link rel="stylesheet" href="assets/css/navrh.css?v=39">
-<link rel="stylesheet" href="assets/css/premium.css?v=37">
-<script src="assets/js/mereni.js?v=2" defer></script>
-<script src="assets/js/navrh.js?v=6" defer></script>
+<link rel="stylesheet" href="assets/css/navrh.css?v=41">
+<link rel="stylesheet" href="assets/css/premium.css?v=38">
+<script src="assets/js/mereni.js?v=3" defer></script>
+<script src="assets/js/navrh.js?v=7" defer></script>
 <script src="assets/js/premium.js?v=2" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Plumber", "name": "Janak instalatérství", "telephone": "+420773146244", "email": "info@instalaterstvi-janak.cz", "address": [{"@type": "PostalAddress", "streetAddress": "Struha 794", "addressLocality": "Vamberk", "postalCode": "517 54", "addressCountry": "CZ"}, {"@type": "PostalAddress", "streetAddress": "V Kopečku 169/14", "addressLocality": "Hradec Králové", "postalCode": "500 03", "addressCountry": "CZ"}], "founder": {"@type": "Person", "name": "Kevin Janak"}, "url": "https://www.instalaterstvi-janak.cz/", "sameAs": ["https://www.facebook.com/profile.php?id=61565203664697", "https://www.instagram.com/instalaterstvi_janak/"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Jak dlouho bude během rekonstrukce odstavená voda?", "acceptedAnswer": {"@type": "Answer", "text": "Odstávky vody probíhají pouze v pracovní době, zpravidla od 8:00 do 16:00. Po skončení prací zajistíme provizorní zprovoznění rozvodů, aby obyvatelé mohli vodu opět využívat."}}, {"@type": "Question", "name": "Musí být obyvatelé během rekonstrukce doma?", "acceptedAnswer": {"@type": "Answer", "text": "Ne vždy. Díky našemu osvědčenému systému organizace přístupu do bytů dokážeme výrazně omezit nutnost osobní přítomnosti obyvatel. Konkrétní možnosti vám rádi představíme při osobní schůzce."}}, {"@type": "Question", "name": "Jak dlouho trvá kompletní rekonstrukce rozvodů?", "acceptedAnswer": {"@type": "Answer", "text": "Standardně přibližně 3–4 týdny. Přesná délka závisí na velikosti domu, rozsahu prací a stavebních podmínkách. Harmonogram připravujeme před zahájením realizace."}}, {"@type": "Question", "name": "Zajistíte také bourací a zednické práce?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Zajistíme potřebné bourací a zednické práce včetně následného zapravení a úklidu. Díky tomu předáváme prostory čisté a dokončené v dohodnutém rozsahu."}}]}</script>
@@ -127,15 +127,15 @@
           <input type="hidden" name="service" value="svj">
           <div class="sv-form__grid">
             <label class="sv-field"><span>Jméno a příjmení <b aria-hidden="true">*</b></span><input id="svj-name" name="name" type="text" required autocomplete="name" placeholder="Jan Novák" class="sv-input"></label>
-            <label class="sv-field"><span>Telefon <b aria-hidden="true">*</b></span><input id="svj-tel" name="phone" type="tel" required autocomplete="tel" placeholder="+420 123 456 789" class="sv-input"></label>
-            <label class="sv-field sv-field--full"><span>E-mail <b aria-hidden="true">*</b></span><input id="svj-mail" name="email" type="email" required autocomplete="email" placeholder="jan@svj.cz" class="sv-input"></label>
+            <label class="sv-field"><span>Telefon <b aria-hidden="true">*</b></span><input id="svj-tel" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+420 123 456 789" class="sv-input"></label>
+            <label class="sv-field sv-field--full"><span>E-mail (nepovinné)</span><input id="svj-mail" name="email" type="email" autocomplete="email" placeholder="jan@svj.cz" class="sv-input"></label>
             <label class="sv-field sv-field--full"><span>Název SVJ / adresa domu <b aria-hidden="true">*</b></span><input id="svj-addr" name="address" type="text" required placeholder="SVJ Nová 123, Hradec Králové" class="sv-input"></label>
-            <label class="sv-field sv-field--full"><span>S čím potřebujete pomoci? <b aria-hidden="true">*</b></span><textarea id="svj-msg" name="message" rows="3" required placeholder="Např. výměna stoupaček, oprava rozvodů, nabídka na rekonstrukci…" class="sv-input"></textarea></label>
+            <label class="sv-field sv-field--full"><span>S čím potřebujete pomoci? (nepovinné)</span><textarea id="svj-msg" name="message" rows="3" placeholder="Např. výměna stoupaček, oprava rozvodů, nabídka na rekonstrukci…" class="sv-input"></textarea></label>
           </div>
           <ul class="sv-checks"><li><svg class="" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l3 3 5-6"/></svg>Bez závazků</li><li><svg class="" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l3 3 5-6"/></svg>Rychlá odpověď</li><li><svg class="" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l3 3 5-6"/></svg>Osobní přístup</li></ul>
           <label class="sv-gdpr"><input id="svj-gdpr" name="gdpr" type="checkbox" required><span>Souhlasím se <a href="ochrana-soukromi.html">zpracováním osobních údajů</a> <b aria-hidden="true">*</b></span></label>
           <button type="submit" class="sv-btn sv-btn--send">Odeslat poptávku <span aria-hidden="true">→</span></button>
-          <p data-thanks hidden role="status" class="sv-thanks">Děkujeme, poptávku jsme přijali. <span class="ov" title="Otevřený bod – ověřit před spuštěním">[prototyp: zpráva se nikam neodeslala]</span></p>
+          <p data-thanks hidden role="status" class="sv-thanks form-thanks"><strong>Děkujeme, budeme Vás co nejdříve kontaktovat.</strong> <span class="ov" title="Otevřený bod – ověřit před spuštěním">[prototyp: zpráva se nikam neodeslala]</span></p>
         </form>
       </div>
     </div></div>

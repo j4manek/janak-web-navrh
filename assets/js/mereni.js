@@ -111,6 +111,23 @@
 
   // Zobrazí záložní zprávu, když se poptávku nepodařilo odeslat na Telegram (Worker nedostupný
   // apod.) - klonuje styl existujícího [data-thanks] prvku, aby nebylo nutné upravovat HTML.
+  // Úspěch: ukázat poděkování, vyčistit formulář (včetně popisku nahrané fotky) a posunout poděkování do zorného pole
+  function finishOk(form, thanks, real) {
+    var note = thanks && thanks.querySelector('.ov');
+    if (note) note.hidden = real; // poznámka o prototypu zmizí, jakmile se odesílá doopravdy
+    form.reset();
+    var file = form.querySelector('input[type="file"]');
+    if (file) file.dispatchEvent(new Event('change', { bubbles: true }));
+    var ph = form.querySelector('input[name="phone"]');
+    if (ph) { ph.setCustomValidity(''); ph.removeAttribute('aria-invalid'); }
+    var fe = form.querySelector('.fld-err'); if (fe) fe.hidden = true;
+    if (thanks) {
+      thanks.hidden = false;
+      thanks.setAttribute('tabindex', '-1');
+      thanks.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+  }
+
   function showSendError(form, thanks) {
     var fail = form.querySelector('[data-send-error]');
     if (!fail) {
@@ -132,6 +149,33 @@
     var submitted = false;
     var seen = {};
     var lastField = '';
+
+    // Telefon: aspoň 9 číslic (mezery, +420 a pomlčky se nepočítají), chyba přímo u pole
+    var phone = form.querySelector('input[name="phone"]');
+    var phoneErr = null;
+    function phoneDigits() { return (phone.value.match(/\d/g) || []).length; }
+    function checkPhone(showEmpty) {
+      var empty = !phone.value.trim();
+      var bad = !empty && phoneDigits() < 9;
+      phone.setCustomValidity(bad ? 'Zadejte telefon alespoň s 9 číslicemi.' : '');
+      if (!phoneErr) {
+        phoneErr = document.createElement('p');
+        phoneErr.className = 'fld-err'; phoneErr.setAttribute('role', 'alert'); phoneErr.hidden = true;
+        phoneErr.id = (phone.id || 'phone') + '-err';
+        (phone.closest('label') || phone.parentNode).insertAdjacentElement('afterend', phoneErr);
+        phone.setAttribute('aria-describedby', phoneErr.id);
+      }
+      phoneErr.textContent = bad ? 'Zadejte telefon alespoň s 9 číslicemi, např. 773 146 244.' : '';
+      phoneErr.hidden = !bad;
+      phone.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      return !bad;
+    }
+    if (phone) {
+      phone.addEventListener('input', function () { if (phone.getAttribute('aria-invalid') === 'true' || phoneDigits() >= 9) checkPhone(); });
+      phone.addEventListener('blur', function () { checkPhone(); });
+      var sb = form.querySelector('button[type="submit"]');
+      if (sb) sb.addEventListener('click', function () { checkPhone(); });
+    }
 
     form.addEventListener('focusin', function (e) {
       var name = e.target.name || '';
@@ -163,7 +207,7 @@
       if (!endpoint) {
         // Prototyp bez nasazeného Workeru: zachovat dosavadní chování (jen potvrzení).
         track('generate_lead', { form_type: type, service: service });
-        if (thanks) thanks.hidden = false;
+        finishOk(form, thanks, false);
         return;
       }
 
@@ -176,7 +220,7 @@
           if (!res.ok) throw new Error('send_failed');
           // Konverze se měří až po úspěšném odeslání, aby se nepočítaly neodeslané poptávky
           track('generate_lead', { form_type: type, service: service });
-          if (thanks) thanks.hidden = false;
+          finishOk(form, thanks, true);
         })
         .catch(function () {
           submitted = false;

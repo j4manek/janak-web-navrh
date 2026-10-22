@@ -59,3 +59,15 @@ document.addEventListener('click', function (e) {
     ['dragleave', 'drop'].forEach(function (t) { dz.addEventListener(t, function () { dz.classList.remove('is-over'); }); });
   });
 })();
+
+// Spodní lišta na mobilu: schovaná, dokud je vidět hlavní tlačítko v hero, a když je na obrazovce formulář
+(function () {
+  var bar = document.querySelector('.call-bar');
+  var heroBtn = document.querySelector('[data-cta="hero_poptavka"], [data-cta="svj_hero_poptavka"]');
+  if (!bar || !heroBtn || !('IntersectionObserver' in window)) return;
+  var heroVisible = true, formVisible = false;
+  function update() { bar.classList.toggle('call-bar--off', heroVisible || formVisible); }
+  new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(heroBtn);
+  var form = document.getElementById('formular');
+  if (form) new IntersectionObserver(function (e) { formVisible = e[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(form);
+})();

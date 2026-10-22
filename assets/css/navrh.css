@@ -630,3 +630,23 @@ input[type="checkbox"][name="gdpr"] { width: 1.5rem !important; height: 1.5rem !
 @media (max-width: 639px) { input:not([type="checkbox"]):not([type="file"]), textarea, select, .sv-input { font-size: 16px !important; } }
 h1, h2, h3 { text-wrap: balance; }
 a, button, summary, label, [data-flip] { touch-action: manipulation; }
+
+/* Formuláře: chyba telefonu u pole a poděkování po odeslání */
+.fld-err { margin: .35rem 0 0; font-size: .85rem; line-height: 1.35; color: #b91c1c; font-weight: 600; }
+input[aria-invalid="true"] { border-color: #b91c1c !important; outline-color: #b91c1c; }
+.form-thanks { margin-top: 1rem; padding: 1rem 1.1rem; border-radius: .7rem; background: #e6fafb; border: 1px solid #9fe8ec; color: #10243A; font-size: 1rem; line-height: 1.45; }
+.form-thanks .ov { display: block; margin-top: .4rem; font-size: .75rem; font-weight: 400; color: #5b6b7b; }
+
+/* Mobil: spodní lišta se ukáže až po odscrollování tlačítek v hero a zmizí, když je vidět formulář; při cookie liště se neukazuje vůbec */
+.call-bar { transition: transform .2s ease, visibility .2s; }
+.call-bar--off { transform: translateY(110%); visibility: hidden; }
+@media (max-width: 1023px) {
+  body[data-consent="unset"] .call-bar { display: none; }
+  body[data-consent="unset"] .cookie-banner { bottom: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .call-bar { transition: none; } }
+
+/* Sjednocení vzhledu: karty služeb v jedné barvě značky (dřív modrá, červená, oranžová) a nadpisy v námořnické */
+:root { --ui-text-highlighted: #10243A; }
+.flip-grid .flip-card { --sc: #0b7f86 !important; }
+.flip-grid .flip-card .sc-ico { stroke: #0b7f86; }

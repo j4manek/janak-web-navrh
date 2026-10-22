@@ -763,3 +763,23 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 .sv-proj__pin { font-size: .78rem; }
 .lt-badge { font-size: .78rem; }
 .sv-proj__tags li { font-size: .78rem; }
+
+/* Citát bez barevného proužku u okraje: velká uvozovka a jemný podklad */
+.sv-quote { position: relative; max-width: 46rem; margin: 2rem 0 0; padding: 1.4rem 1.5rem 1.2rem 3.6rem; border-left: 0; border-radius: .9rem; background: #fff; box-shadow: 0 3px 16px rgba(16, 36, 58, .08); }
+.sv-quote::before { content: "„"; position: absolute; left: 1rem; top: .35rem; font-size: 3.4rem; line-height: 1; font-weight: 800; color: #40DCE0; -webkit-text-stroke: 1px #10243A; }
+@media (max-width: 639px) { .sv-quote { padding: 1rem 1rem .9rem 2.8rem; } .sv-quote::before { left: .7rem; font-size: 2.6rem; } }
+
+/* Sekce 02 Proč právě my jako sloupce s velkými čísly (bez karet), ať se liší od ostatních sekcí */
+.lt-why .lt-grid { gap: 0; }
+.lt-why .lt-card { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: .5rem 1.6rem; }
+.lt-why .lt-card + .lt-card { border-left: 1px solid #cfe0ea; }
+.lt-why .lt-card__top { display: block; margin-bottom: .7rem; }
+.lt-why .lt-card__i { display: none; }
+.lt-why .lt-card__n { font-size: 2.8rem; line-height: 1; font-weight: 800; color: #40DCE0; -webkit-text-stroke: 1px #10243A; paint-order: stroke fill; letter-spacing: -.02em; margin-bottom: .35rem; }
+.lt-why .lt-card h3 { font-size: 1.25rem; }
+.lt-why .lt-card > p { font-size: .95rem; }
+@media (max-width: 767px) {
+  .lt-why .lt-card { padding: 1.1rem 0; }
+  .lt-why .lt-card + .lt-card { border-left: 0; border-top: 1px solid #cfe0ea; }
+  .lt-why .lt-card__n { font-size: 2rem; }
+}
