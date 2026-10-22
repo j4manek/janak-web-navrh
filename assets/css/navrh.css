@@ -611,8 +611,8 @@ body.pm-page .pm-btn--primary:hover { filter: brightness(0.95); }
 #formular { scroll-margin-top: 6rem; }
 
 /* Přístupnost (audit 2026-10-22): odkaz pro přeskočení menu, viditelné zaostření, zástupný text a velikost klikacích ploch */
-.skip-link { position: absolute; left: .75rem; top: -4rem; z-index: 100; padding: .7rem 1rem; border-radius: .5rem; background: #10243A; color: #fff; font-weight: 700; text-decoration: none; transition: top .15s; }
-.skip-link:focus { top: .75rem; outline: 3px solid #40DCE0; outline-offset: 2px; }
+.skip-link { position: absolute; left: .75rem; top: .75rem; z-index: 100; padding: .7rem 1rem; border-radius: .5rem; background: #10243A; color: #fff; font-weight: 700; text-decoration: none; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; white-space: nowrap; }
+.skip-link:focus { clip-path: none; width: auto; height: auto; overflow: visible; outline: 3px solid #40DCE0; outline-offset: 2px; }
 #main:focus { outline: none; }
 a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #0b7f86; outline-offset: 2px; }
 ::placeholder { color: #5f6f7e; opacity: 1; }
@@ -690,3 +690,6 @@ input[aria-invalid="true"] { border-color: #b91c1c !important; outline-color: #b
 #kontakt .help-box__ico { stroke: #40DCE0; }
 #kontakt .ct-form form { box-shadow: 0 18px 50px rgba(0, 0, 0, .28); border-color: transparent; }
 @media (max-width: 639px) { #kontakt { padding-top: 1.75rem !important; padding-bottom: 1.75rem !important; } #kontakt::before { width: 9rem; left: -4rem; } .home-hero::before { width: 8rem; left: -4rem; } }
+
+/* Přístupnost: tlačítko cookies tmavý text na tyrkysové (kontrast > 7) */
+.cookie-btn:not(.cookie-btn--ghost) { background: #40DCE0; color: #0a0a0a; border: 1.5px solid #0a0a0a; font-weight: 700; }
