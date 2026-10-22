@@ -625,3 +625,24 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 .lt-stripe { right: calc(min(34%, 30rem) - 1.5rem); width: 2.4rem; }
 @media (max-width: 639px) { .lt-pan { width: 40%; opacity: .4; } }
 @media (max-width: 639px) { .lt-stripe { display: none; } }
+
+/* Fotka bytového domu v hlavičkách sekcí (místo ilustrace) + "had" procházející kroky */
+.lt-pan { width: min(36%, 32rem); height: 100%; object-fit: cover; object-position: left center; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 42%); mask-image: linear-gradient(90deg, transparent 0, #000 42%); -webkit-mask-composite: initial; mask-composite: initial; }
+.lt-stripe { right: calc(min(36%, 32rem) - 1.2rem); }
+@media (max-width: 639px) { .lt-pan { width: 42%; opacity: .55; } }
+
+.lt-snake { position: relative; padding: 0; }
+.lt-snake__path { display: none; position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 7.5rem; z-index: 0; overflow: visible; }
+.lt-snake__glow { fill: none; stroke: #40DCE0; stroke-width: 16; stroke-linecap: round; opacity: .18; vector-effect: non-scaling-stroke; }
+.lt-snake__line { fill: none; stroke: #40DCE0; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 2 11; vector-effect: non-scaling-stroke; }
+.lt-snake__head { fill: #40DCE0; stroke: #10243A; stroke-width: 1.5; }
+.lt-steps { position: relative; z-index: 1; }
+@media (min-width: 64rem) {
+  .lt-snake__path { display: block; }
+  .lt-step:nth-child(odd) .lt-step__top { margin-top: 0; }
+  .lt-step:nth-child(even) .lt-step__top { margin-top: 3.2rem; }
+  .lt-step:not(:last-child)::after { display: none; }
+  .lt-step__ic { box-shadow: 0 0 0 6px #f3f9fc, 0 4px 16px rgba(16, 36, 58, .12); }
+  .lt-step { padding-bottom: .5rem; }
+}
+@media (max-width: 639px) { .lt-pan { opacity: .28; width: 46%; } }
