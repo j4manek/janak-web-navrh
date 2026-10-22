@@ -693,3 +693,18 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
   .fq-item p { margin: 0 .85rem; padding: .7rem 0 .85rem; font-size: .85rem; }
 }
 .fq-sec .lt-h2 em { display: inline; } .fq-item { align-self: start; }
+
+/* ============================================================
+   SVJ: tmavé sekce ve stylu Robinova návrhu: sytý navy přechod s modrou září vpravo
+   a svítící šikmé tyrkysové pruhy u okraje (jen stránka SVJ, hlavní web beze změny)
+   ============================================================ */
+.sd-hero, .sv-contact__top { position: relative; overflow: hidden; isolation: isolate; }
+.sd-hero { background: radial-gradient(ellipse 55% 80% at 100% 55%, #153868 0%, transparent 70%), linear-gradient(135deg, #071a31 0%, #091f3b 55%, #0b2a4a 100%); }
+.sv-contact__top { background: radial-gradient(ellipse 50% 75% at 100% 65%, #153868 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 0% 100%, rgba(64, 220, 224, .12) 0%, transparent 70%), linear-gradient(135deg, #071a31 0%, #091f3b 55%, #0b2a4a 100%); }
+.sd-hero::before, .sv-contact__top::before, .sv-contact__top::after { content: ""; position: absolute; pointer-events: none; z-index: -1; }
+.sv-contact__top::before { left: -6rem; bottom: -2rem; width: 17rem; height: 62%; background: linear-gradient(180deg, rgba(64, 220, 224, 0) 0%, rgba(64, 220, 224, .5) 45%, rgba(64, 220, 224, .08) 100%); clip-path: polygon(0 28%, 46% 0, 100% 100%, 0 100%); filter: blur(.4px); }
+.sv-contact__top::after { right: -3rem; top: 0; width: 9rem; height: 45%; background: linear-gradient(200deg, rgba(64, 220, 224, .45) 0%, rgba(64, 220, 224, 0) 80%); clip-path: polygon(40% 0, 100% 0, 100% 70%); }
+.sd-hero::before { left: -7rem; bottom: -3rem; width: 15rem; height: 48%; background: linear-gradient(180deg, rgba(64, 220, 224, 0) 0%, rgba(64, 220, 224, .4) 50%, rgba(64, 220, 224, .06) 100%); clip-path: polygon(0 30%, 46% 0, 100% 100%, 0 100%); }
+.sv-cinfo li { background: rgba(9, 36, 68, .55); border: 1px solid rgba(64, 220, 224, .22); backdrop-filter: blur(2px); }
+.sd-lede, .sv-contact__l .sv-sub { color: rgba(255, 255, 255, .9); }
+@media (max-width: 639px) { .sv-contact__top::before { width: 9rem; left: -4rem; } .sv-contact__top::after { display: none; } .sd-hero::before { width: 8rem; left: -4rem; } }
