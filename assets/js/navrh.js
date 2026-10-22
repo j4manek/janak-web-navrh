@@ -59,19 +59,3 @@ document.addEventListener('click', function (e) {
     ['dragleave', 'drop'].forEach(function (t) { dz.addEventListener(t, function () { dz.classList.remove('is-over'); }); });
   });
 })();
-
-// Video: soubor (data-src) se načte až po kliknutí na Přehrát. Bez data-src zůstane zástupný nápis.
-document.addEventListener('click', function (e) {
-  var btn = e.target.closest('.vid__play');
-  if (!btn) return;
-  var box = btn.closest('[data-video]');
-  var src = box.dataset.src;
-  var tag = box.querySelector('[data-vid-tag]');
-  if (!src) { tag.textContent = 'Video se připravuje, brzy tu bude.'; return; }
-  var v = document.createElement('video');
-  v.controls = true; v.playsInline = true; v.preload = 'auto'; v.src = src;
-  if (box.dataset.title) v.setAttribute('aria-label', box.dataset.title);
-  v.addEventListener('error', function () { box.classList.remove('is-playing'); v.remove(); tag.textContent = 'Video se nepodařilo načíst.'; });
-  box.appendChild(v); box.classList.add('is-playing');
-  v.play().catch(function () {});
-});
