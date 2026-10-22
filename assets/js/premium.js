@@ -44,3 +44,14 @@
     });
   });
 })();
+
+// Mobil: tlačítko rozbalí/sbalí skupinu karet (služby, realizace). Na počítači je tlačítko skryté a karty vidět vždy.
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.m-fold-btn');
+  if (!b) return;
+  var box = document.getElementById(b.dataset.fold);
+  if (!box) return;
+  var open = box.classList.toggle('is-open');
+  b.setAttribute('aria-expanded', String(open));
+  b.textContent = open ? b.dataset.less : b.dataset.more;
+});

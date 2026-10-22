@@ -783,3 +783,13 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
   .lt-why .lt-card + .lt-card { border-left: 0; border-top: 1px solid #cfe0ea; }
   .lt-why .lt-card__n { font-size: 2rem; }
 }
+
+/* Mobil: služby a realizace jsou sbalené (první dvě položky), zbytek se rozbalí tlačítkem; na počítači se neprojeví */
+.m-fold-btn { display: none; }
+@media (max-width: 639px) {
+  .m-fold:not(.is-open) > :nth-child(n+3) { display: none; }
+  .m-fold:not(.is-open) .sv-proj-col { display: none; }
+  .m-fold-btn { display: flex; align-items: center; justify-content: center; gap: .5rem; width: 100%; min-height: 2.8rem; margin-top: .75rem; border: 1.5px solid #10243A; border-radius: .6rem; background: #fff; font-weight: 700; font-size: .95rem; color: #10243A; cursor: pointer; }
+  .m-fold-btn::after { content: "▾"; transition: transform .2s; }
+  .m-fold-btn[aria-expanded="true"]::after { transform: rotate(180deg); }
+}
