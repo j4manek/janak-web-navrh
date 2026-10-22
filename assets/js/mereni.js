@@ -156,28 +156,34 @@
       e.preventDefault();
       submitted = true;
       var service = form.elements.service ? form.elements.service.value : '';
-      track('generate_lead', { form_type: type, service: service });
-
       var thanks = form.querySelector('[data-thanks]');
       var submitBtn = form.querySelector('button[type="submit"]');
       var endpoint = leadEndpointFor(form);
 
       if (!endpoint) {
         // Prototyp bez nasazeného Workeru: zachovat dosavadní chování (jen potvrzení).
+        track('generate_lead', { form_type: type, service: service });
         if (thanks) thanks.hidden = false;
         return;
       }
 
       if (submitBtn) submitBtn.disabled = true;
-      fetch(endpoint, { method: 'POST', body: new FormData(form) })
+      // Časový limit, ať tlačítko nezůstane zablokované při výpadku sítě
+      var ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 15000) : null;
+      fetch(endpoint, { method: 'POST', body: new FormData(form), signal: ctrl ? ctrl.signal : undefined })
         .then(function (res) {
           if (!res.ok) throw new Error('send_failed');
+          // Konverze se měří až po úspěšném odeslání, aby se nepočítaly neodeslané poptávky
+          track('generate_lead', { form_type: type, service: service });
           if (thanks) thanks.hidden = false;
         })
         .catch(function () {
+          submitted = false;
           showSendError(form, thanks);
         })
         .finally(function () {
+          if (timer) clearTimeout(timer);
           if (submitBtn) submitBtn.disabled = false;
         });
     });

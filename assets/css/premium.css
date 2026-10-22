@@ -735,3 +735,24 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 .lt-sec + .lt-sec { border-top: 1px solid rgba(16, 36, 58, .08); }
 .pm-page #postup.lt-how { background: linear-gradient(180deg, #d9f3f8 0%, #c7ebf3 100%); }
 .pm-page #sluzby.lt-what { background: linear-gradient(180deg, #e6edf3 0%, #dbe5ee 100%); }
+
+/* Přístupnost: kontrast malých štítků a čísel na světlých podkladech >= 4,5:1 */
+.sv-label, .sv-sec .sv-label, .lt-head .sv-label, .fq-sec .sv-label { color: #086a70; }
+.sd-hero .sd-kicker, .sv-head--dark .sv-label, .sv-contact__l .sv-label { color: #fff; }
+.lt-card__n { color: #5b6b7b; }
+.lt-card__big { color: #dde7ee; }
+.sv-gdpr input[type="checkbox"], .sv-checks + .sv-gdpr input { min-width: 1.25rem; min-height: 1.25rem; }
+.sv-gdpr { padding: .25rem 0; }
+.sv-gdpr a { padding: .15rem 0; display: inline-block; }
+
+/* Čitelnost na mobilu: nejmenší texty (štítky, tagy) aspoň 11,5 px */
+@media (max-width: 639px) {
+  .lt-badge { font-size: .72rem; }
+  .lt-ill { font-size: .72rem; }
+  .sv-proj__pin { font-size: .72rem; }
+  .sv-proj__tags li { font-size: .72rem; }
+  .sv-label { font-size: .72rem; }
+}
+
+/* Široké monitory: text hera drží stejnou osu jako hlavička a sekce, na 1440 px beze změny */
+@media (min-width: 64rem) { .sd-hero__grid { padding-left: max(2.5rem, calc((100vw - 1440px) / 2 + 2.5rem)); } }
