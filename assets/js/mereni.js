@@ -36,7 +36,7 @@
 
   // Napojení formuláře na Telegram (outputs/lead-telegram-automation). [doplnit] až bude
   // Worker nasazený - do té doby formulář jen ukáže potvrzení lokálně (prototyp).
-  var FALLBACK_PHONE = '+420 773 146 444';
+  var FALLBACK_PHONE = '+420 773 146 244';
 
   // Formulář může mít vlastní cíl (jiný e-mail/kanál než hlavní poptávka) přes
   // data-lead-endpoint-var="JMENO_PROMENNE" - jinak se použije společný JANAK_LEAD_ENDPOINT.
