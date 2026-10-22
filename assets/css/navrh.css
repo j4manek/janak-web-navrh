@@ -625,3 +625,8 @@ input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: #0b7f86;
 [data-cookie-reset] { color: #086a70; }
 input[type="checkbox"] { width: 1.5rem; height: 1.5rem; }
 input[type="checkbox"][name="gdpr"] { width: 1.5rem !important; height: 1.5rem !important; min-width: 1.5rem; }
+
+/* Web Interface Guidelines: iPhone nepřibližuje stránku při zaostření pole (písmo aspoň 16 px), vyvážené nadpisy, rychlé klepnutí */
+@media (max-width: 639px) { input:not([type="checkbox"]):not([type="file"]), textarea, select, .sv-input { font-size: 16px !important; } }
+h1, h2, h3 { text-wrap: balance; }
+a, button, summary, label, [data-flip] { touch-action: manipulation; }
