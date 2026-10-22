@@ -741,7 +741,7 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 .sd-hero .sd-kicker, .sv-head--dark .sv-label, .sv-contact__l .sv-label { color: #fff; }
 .lt-card__n { color: #5b6b7b; }
 .lt-card__big { color: #dde7ee; }
-.sv-gdpr input[type="checkbox"], .sv-checks + .sv-gdpr input { min-width: 1.25rem; min-height: 1.25rem; }
+.sv-gdpr input[type="checkbox"], .sv-checks + .sv-gdpr input { min-width: 1.5rem; min-height: 1.5rem; }
 .sv-gdpr { padding: .25rem 0; }
 .sv-gdpr a { padding: .15rem 0; display: inline-block; }
 
@@ -756,3 +756,10 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
 
 /* Široké monitory: text hera drží stejnou osu jako hlavička a sekce, na 1440 px beze změny */
 @media (min-width: 64rem) { .sd-hero__grid { padding-left: max(2.5rem, calc((100vw - 1440px) / 2 + 2.5rem)); } }
+
+/* Nejmenší texty i na počítači aspoň 11,5 px */
+.sv-label, .sv-label--dark { font-size: .75rem; }
+.lt-ill { font-size: .72rem; }
+.sv-proj__pin { font-size: .78rem; }
+.lt-badge { font-size: .78rem; }
+.sv-proj__tags li { font-size: .78rem; }

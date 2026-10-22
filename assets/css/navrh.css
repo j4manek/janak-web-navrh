@@ -619,3 +619,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 footer a, footer button { display: inline-block; min-height: 24px; padding: 2px 0; }
 input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: #0b7f86; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+
+/* Kontrast odkazů "Zjistit více" a tlačítka cookies, větší zaškrtávací políčko (WCAG 2.2: cíl aspoň 24 px) */
+.sc-btn { color: #10243A; }
+[data-cookie-reset] { color: #086a70; }
+input[type="checkbox"] { width: 1.5rem; height: 1.5rem; }
+input[type="checkbox"][name="gdpr"] { width: 1.5rem !important; height: 1.5rem !important; min-width: 1.5rem; }
