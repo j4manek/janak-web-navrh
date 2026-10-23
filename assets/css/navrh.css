@@ -648,8 +648,6 @@ input[aria-invalid="true"] { border-color: #b91c1c !important; outline-color: #b
 
 /* Sjednocení vzhledu: karty služeb v jedné barvě značky (dřív modrá, červená, oranžová) a nadpisy v námořnické */
 :root { --ui-text-highlighted: #10243A; }
-.flip-grid .flip-card { --sc: #0b7f86 !important; }
-.flip-grid .flip-card .sc-ico { stroke: #0b7f86; }
 
 /* ============================================================
    Hlavní stránka: jemná změna vzhledu (2026-10-22), ve stejném duchu jako SVJ,
@@ -673,23 +671,28 @@ input[aria-invalid="true"] { border-color: #b91c1c !important; outline-color: #b
 /* Reference: bílý podklad mezi dvěma světlými pruhy */
 #reference { background: #fff; padding-top: 2.5rem; }
 
-/* Kontakt: tmavě modrý blok s bílým formulářem jako na stránce SVJ */
-#kontakt { position: relative; overflow: hidden; isolation: isolate; margin: 0 !important; padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; background: radial-gradient(ellipse 50% 70% at 100% 70%, #153868 0%, transparent 70%), linear-gradient(135deg, #071a31 0%, #091f3b 55%, #0b2a4a 100%); }
-#kontakt::before { content: ""; position: absolute; z-index: -1; left: -6rem; bottom: -2rem; width: 16rem; height: 60%; background: linear-gradient(180deg, rgba(64, 220, 224, 0) 0%, rgba(64, 220, 224, .45) 45%, rgba(64, 220, 224, .08) 100%); clip-path: polygon(0 28%, 46% 0, 100% 100%, 0 100%); }
-#kontakt .ct-left h2 { color: #fff; }
-#kontakt .ct-left > div:first-child p { color: rgba(255, 255, 255, .88); }
-#kontakt .ct-left > div.ring { background: rgba(9, 36, 68, .55) !important; box-shadow: none; --tw-ring-color: rgba(64, 220, 224, .25); border: 1px solid rgba(64, 220, 224, .22); }
-#kontakt .ct-left .font-medium { color: #fff; }
-#kontakt .ct-left .text-muted { color: rgba(255, 255, 255, .85); }
-#kontakt .ct-left a.text-primary { color: #40DCE0; }
-#kontakt .ct-left svg, #kontakt .ct-left .iconify { color: #40DCE0; }
-#kontakt .ct-left .iconify { background-color: #40DCE0 !important; }
-#kontakt .help-box { background: rgba(64, 220, 224, .1); border-color: rgba(64, 220, 224, .3); }
-#kontakt .help-box strong { color: #fff; }
-#kontakt .help-box p { color: rgba(255, 255, 255, .85); }
-#kontakt .help-box__ico { stroke: #40DCE0; }
-#kontakt .ct-form form { box-shadow: 0 18px 50px rgba(0, 0, 0, .28); border-color: transparent; }
-@media (max-width: 639px) { #kontakt { padding-top: 1.75rem !important; padding-bottom: 1.75rem !important; } #kontakt::before { width: 9rem; left: -4rem; } .home-hero::before { width: 8rem; left: -4rem; } }
 
 /* Přístupnost: tlačítko cookies tmavý text na tyrkysové (kontrast > 7) */
 .cookie-btn:not(.cookie-btn--ghost) { background: #40DCE0; color: #0a0a0a; border: 1.5px solid #0a0a0a; font-weight: 700; }
+
+/* Hero podle Robinova návrhu (2026-10-23): zvýrazněné "Instalatéři", dvě řádky pod nadpisem, hodnocení Google a Firmy.cz vedle sebe */
+.hl-mark { background: #40DCE0; color: #0a0a0a; padding: 0 .2em; border-radius: .18em; box-decoration-break: clone; -webkit-box-decoration-break: clone; -webkit-text-stroke: 0; }
+.hero-sub { display: grid; gap: .35rem; margin: 0; max-width: 32rem; }
+.hero-sub strong { font-size: 1.35rem; line-height: 1.3; font-weight: 700; color: var(--ui-text-highlighted); }
+.hero-sub span { font-size: 1.2rem; color: var(--ui-text-muted); }
+.rating-duo { display: grid; grid-template-columns: 1fr 1fr; background: #fff; border-radius: .8rem; box-shadow: 0 6px 22px rgba(16, 36, 58, .1); overflow: hidden; max-width: 32rem; }
+.rating-duo__item { display: grid; gap: .15rem; padding: .9rem 1.1rem; text-decoration: none; color: inherit; }
+.rating-duo__item + .rating-duo__item { border-left: 1px solid #e3ecf1; }
+.rating-duo__item:hover { background: #f6fcfd; }
+.rating-duo__src { font-weight: 800; font-size: 1rem; color: var(--ui-text-highlighted); }
+.rating-duo__row { display: flex; align-items: center; gap: .5rem; }
+.rating-duo .rating-card__stars { display: flex; gap: .05rem; }
+.rating-duo .rating-card__stars .iconify { width: 1rem; height: 1rem; }
+.rating-duo .rating-card__link { border: 0; padding: 0; margin-top: .15rem; white-space: normal; }
+@media (max-width: 639px) { .rating-duo__item { padding: .7rem .8rem; } .rating-duo .rating-card__stars .iconify { width: .85rem; height: .85rem; } .hero-sub strong { font-size: 1.15rem; } .hero-sub span { font-size: 1.05rem; } }
+
+/* Kontakt: světlý podklad ve stejném tónu jako hero a zbytek hlavní stránky (tyrkysový přechod, jemný šikmý pruh) */
+#kontakt { position: relative; overflow: hidden; isolation: isolate; margin: 0 !important; padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; background: radial-gradient(ellipse 55% 70% at 88% 85%, rgba(64, 220, 224, .16) 0%, transparent 70%), linear-gradient(180deg, #fff 0%, #f1fafb 45%, #e3f6f8 100%); }
+#kontakt::before { content: ""; position: absolute; z-index: -1; left: -6rem; bottom: -2rem; width: 15rem; height: 55%; background: linear-gradient(180deg, rgba(64, 220, 224, 0) 0%, rgba(64, 220, 224, .32) 55%, rgba(64, 220, 224, .05) 100%); clip-path: polygon(0 30%, 46% 0, 100% 100%, 0 100%); }
+#kontakt .ct-form form { box-shadow: 0 14px 40px rgba(16, 36, 58, .12); }
+@media (max-width: 639px) { #kontakt { padding-top: 1.75rem !important; padding-bottom: 1.75rem !important; } #kontakt::before { width: 8rem; left: -4rem; } }
