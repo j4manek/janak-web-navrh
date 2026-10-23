@@ -793,3 +793,21 @@ textarea.sv-input { resize: vertical; min-height: 5.5rem; }
   .m-fold-btn::after { content: "▾"; transition: transform .2s; }
   .m-fold-btn[aria-expanded="true"]::after { transform: rotate(180deg); }
 }
+
+/* Sekce 03 podle Robinova návrhu (2026-10-23): tmavě modrá hlavička s vlnitým spodním okrajem, který přechází do světlé části;
+   kruhy kroků přesahují přes hranu a navazuje had */
+.pm-page #postup.lt-how { background: linear-gradient(180deg, #e7f3f8 0%, #f7fbfd 100%); }
+.lt-head--navy { color: #fff; padding-bottom: 7rem; background: radial-gradient(ellipse 55% 90% at 90% 10%, #1b4466 0%, transparent 60%), linear-gradient(135deg, #0a1a2c 0%, #10243A 55%, #0d2f4d 100%);
+  -webkit-mask: linear-gradient(#000, #000) top / 100% calc(100% - 79px) no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V34C1220 92 1040 -6 790 30S300 86 0 40Z' fill='%23000'/%3E%3C/svg%3E") bottom / 100% 80px no-repeat;
+          mask: linear-gradient(#000, #000) top / 100% calc(100% - 79px) no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V34C1220 92 1040 -6 790 30S300 86 0 40Z' fill='%23000'/%3E%3C/svg%3E") bottom / 100% 80px no-repeat; }
+.lt-head--navy .sv-label { color: #fff; }
+.lt-head--navy .lt-h2 { color: #fff; }
+.lt-head--navy .lt-h2 em { color: #40DCE0; -webkit-text-stroke: 0; }
+.lt-head--navy .lt-sub { color: rgba(255, 255, 255, .88); }
+.lt-head--navy .lt-stripe { opacity: .9; }
+.lt-how .lt-snake { margin-top: -4.2rem; position: relative; z-index: 2; }
+.lt-how .lt-step__ic { box-shadow: 0 0 0 7px rgba(255, 255, 255, .9), 0 6px 20px rgba(16, 36, 58, .18); }
+.lt-how .lt-step__n { background: #bdeff7; color: #10243A; }
+.lt-how .lt-sub, .lt-how .lt-step p { color: #3f5568; }
+.lt-how .lt-head--navy .lt-sub { color: rgba(255, 255, 255, .88); }
+@media (max-width: 639px) { .lt-head--navy { padding-bottom: 4.5rem; } .lt-how .lt-snake { margin-top: -2.2rem; } }
