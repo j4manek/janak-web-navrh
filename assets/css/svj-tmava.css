@@ -205,3 +205,9 @@
 .lt-how .lt-step__n { width: 2.7rem; height: 2.7rem; font-size: 1rem; }
 @media (min-width: 64rem) { .lt-how .lt-snake { margin-left: -4rem; margin-right: -4rem; } .lt-how .lt-steps { gap: 1.2rem; } }
 @media (max-width: 639px) { .lt-how .lt-step h3 { font-size: 1.1rem; } .lt-how .lt-step p { font-size: .95rem; max-width: none; } }
+
+/* 03: dvoubarevné ikony kroků (tmavě modrá + tyrkysový akcent) */
+.lt-how .lt-step__ic { width: 5.4rem; height: 5.4rem; }
+.lt-how .lt-step__ic svg.ic2 { width: 3.4rem; height: 3.4rem; stroke: #10243A; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.lt-how .lt-step__ic svg.ic2 .a { stroke: #40DCE0; }
+.lt-how .lt-step__ic svg.ic2 circle.a { fill: #40DCE0; stroke: #40DCE0; }
