@@ -1,0 +1,147 @@
+/* NÁVRH (jen lokálně): stránka SVJ celá v tmavém stylu podle Robinových návrhů (2026-10-24).
+   Každá sekce má tmavě modrou hlavičku s fotkou domu a pruhem, karty přesahují přes hranu do světlé části. */
+.pm-page #proc-my.lt-why, .pm-page #postup.lt-how, .pm-page #sluzby.lt-what { background: linear-gradient(180deg, #e9f3f8 0%, #f7fbfd 100%); }
+.lt-head--navy { padding-bottom: 9rem; }
+.lt-head--navy .sv-label { color: #fff; }
+.lt-head--navy .lt-h2, .lt-head--navy .lt-sub { color: #fff; }
+.lt-head--navy .lt-sub { color: rgba(255,255,255,.9); }
+.lt-head--navy .lt-h2 em { color: #40DCE0; -webkit-text-stroke: 0; }
+/* karty a kroky přesahují přes hranu hlavičky */
+.lt-why .lt-grid, .lt-what .lt-grid { margin-top: -5.6rem; position: relative; z-index: 2; }
+.lt-how .lt-snake { margin-top: -5.2rem; }
+
+/* 02: bílé karty (jako v Robinově návrhu), ne sloupce */
+.lt-why .lt-grid { gap: 1.1rem; }
+.lt-why .lt-card { background: #fff; border: 1px solid #e3ecf1; border-radius: 1rem; box-shadow: 0 8px 28px rgba(16,36,58,.14); padding: 1.4rem; }
+.lt-why .lt-card + .lt-card { border-left: 1px solid #e3ecf1; }
+.lt-why .lt-card__top { display: flex; margin-bottom: .8rem; }
+.lt-why .lt-card__i { display: block; }
+.lt-why .lt-card__n { font-size: .9rem; line-height: 1.2; font-weight: 800; color: #8aa0b0; -webkit-text-stroke: 0; margin: 0; }
+.lt-why .lt-card h3 { font-size: 1.15rem; }
+
+/* 04: šikmé bílé karty s tmavým pruhem, ikonou a velkým číslem */
+.lt-what .lt-grid--4 { gap: 1.2rem; }
+.lt-card--what { transform: skewX(-4deg); border: 0; border-left: 3px solid #40DCE0; border-radius: .6rem; padding: 0 1.2rem 1.2rem; box-shadow: 0 10px 30px rgba(16,36,58,.2); }
+.lt-card--what > * { transform: skewX(4deg); }
+.lt-card--what .lt-card__top { margin: 0 -1.2rem .9rem; padding: 1rem 1.6rem; background: linear-gradient(135deg, #0f2b47, #10243A); border-radius: .5rem .5rem 0 0; }
+.lt-card--what .lt-card__top { transform: none; }
+.lt-card--what .lt-card__i { background: transparent; stroke: #40DCE0; width: 2.4rem; height: 2.4rem; padding: .3rem; }
+.lt-card__big { color: #4d6486; font-size: 2.8rem; }
+@media (min-width: 64rem) { .lt-what .lt-grid--4 > .lt-card--what { margin-left: .4rem; } }
+
+/* 03: kroky zůstávají s tyrkysovým hadem; světlý podklad */
+.lt-how .lt-step__ic { box-shadow: 0 0 0 7px rgba(255,255,255,.95), 0 6px 20px rgba(16,36,58,.22); }
+
+/* 05: hlavička i další sekce v tmavém tónu, projekty přesahují hranu */
+.sv-real { background: linear-gradient(180deg, #e9f3f8 0%, #f7fbfd 100%); }
+.sv-head--dark { padding-bottom: 6.5rem; margin-bottom: 0; }
+.sv-real .sv-projs { margin-top: -3.5rem; position: relative; z-index: 2; }
+
+@media (max-width: 639px) {
+  .lt-head--navy { padding-bottom: 5.5rem; }
+  .lt-why .lt-grid, .lt-what .lt-grid { margin-top: -3rem; }
+  .lt-how .lt-snake { margin-top: -2.5rem; }
+  .lt-card--what { transform: none; border-left-width: 0; }
+  .lt-card--what > * { transform: none; }
+  .lt-card--what .lt-card__top { margin: 0 -.75rem .6rem; padding: .6rem .8rem; }
+  .sv-head--dark { padding-bottom: 4rem; }
+  .sv-real .sv-projs { margin-top: -2rem; }
+  .lt-card__big { font-size: 1.8rem; }
+}
+
+/* Sekce za kartami tmavě modré s přechody (světlá jen úzká část dole), s původním vzorem: šikmé pruhy a fotka domu */
+.pm-page #proc-my.lt-why, .pm-page #sluzby.lt-what { background: linear-gradient(180deg, #0a1a2c 0%, #10243A 55%, #0d2f4d 82%, #eaf3f8 96%, #f4f9fc 100%); padding-bottom: 3rem; }
+.pm-page #sluzby.lt-what { background: linear-gradient(180deg, #0a1a2c 0%, #10243A 50%, #12365a 80%, #eaf3f8 96%, #f4f9fc 100%); }
+.lt-what .lt-head--navy, .lt-why .lt-head--navy { background: transparent; }
+.lt-what::before, .lt-why::before { content: ""; position: absolute; z-index: 0; left: -7rem; bottom: 6rem; width: 15rem; height: 42%; background: linear-gradient(180deg, rgba(64,220,224,0) 0%, rgba(64,220,224,.3) 55%, rgba(64,220,224,.05) 100%); clip-path: polygon(0 30%, 46% 0, 100% 100%, 0 100%); pointer-events: none; }
+.lt-sec { position: relative; overflow: hidden; }
+.lt-what .pm-wrap, .lt-why .pm-wrap { position: relative; z-index: 2; }
+.lt-what .lt-cta .sv-btn, .lt-why .lt-cta .sv-btn { box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+/* 05: tmavě modrý podklad za projekty, světlý konec */
+.sv-real { background: linear-gradient(180deg, #0a1a2c 0%, #10243A 40%, #0d2f4d 70%, #eaf3f8 94%, #f4f9fc 100%); position: relative; overflow: hidden; }
+.sv-real .sv-head--dark { background: transparent; }
+.sv-real .pm-wrap { position: relative; z-index: 2; }
+.sv-real::before { content: ""; position: absolute; z-index: 0; right: -4rem; top: 38%; width: 9rem; height: 38%; background: linear-gradient(200deg, rgba(64,220,224,.28) 0%, rgba(64,220,224,0) 80%); clip-path: polygon(40% 0, 100% 0, 100% 70%); pointer-events: none; }
+.sv-real .sv-quote, .sv-real .sv-sum { position: relative; z-index: 2; }
+.sv-real .sv-sum { background: #f4f9fc; }
+.sv-real .sv-quote { background: #fff; }
+@media (max-width: 639px) { .lt-what::before, .lt-why::before { width: 8rem; left: -4rem; } }
+
+/* 03: i postup na tmavém podkladu s tyrkysovým hadem; kroky bílé kruhy, text světlý, světlý jen konec */
+.pm-page #postup.lt-how { background: linear-gradient(180deg, #0a1a2c 0%, #10243A 55%, #0d2f4d 80%, #eaf3f8 97%, #f4f9fc 100%); padding-bottom: 3rem; }
+.lt-how .lt-head--navy { background: transparent; }
+.lt-how .lt-step h3 { color: #fff; }
+.lt-how .lt-step p { color: rgba(255,255,255,.82); }
+.lt-how .lt-step__n { background: #40DCE0; color: #0a0a0a; }
+.lt-how .lt-snake__glow { opacity: .3; }
+.lt-how::before { content: ""; position: absolute; z-index: 0; left: -7rem; bottom: 5rem; width: 15rem; height: 40%; background: linear-gradient(180deg, rgba(64,220,224,0) 0%, rgba(64,220,224,.3) 55%, rgba(64,220,224,.05) 100%); clip-path: polygon(0 30%, 46% 0, 100% 100%, 0 100%); pointer-events: none; }
+.lt-how .lt-cta .sv-btn { box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+@media (max-width: 639px) { .lt-how .lt-step { background: rgba(255,255,255,.07); box-shadow: none; } .lt-how::before { width: 8rem; left: -4rem; } }
+
+/* ===== Přehlednější verze (2026-10-24) =====
+   1) sekce se jasně dělí: střídavé odstíny navy + tenká tyrkysová linka, ne jeden splývající přechod
+   2) fotka domu jen ve 2 hlavičkách (02, 04), 03 a 05 mají čistou hlavičku
+   3) karty služeb: rovný text (zkosený je jen horní pruh), větší písmo
+   4) minimální písmo 14 px, silnější odstupy a jednotný rytmus */
+.lt-sec, .sv-real { border-top: 2px solid rgba(64, 220, 224, .55); }
+.pm-page #proc-my.lt-why { background: linear-gradient(180deg, #0a1a2c 0%, #10243A 60%, #eaf3f8 98%); }
+.pm-page #postup.lt-how { background: linear-gradient(180deg, #0f2b47 0%, #12365a 60%, #eaf3f8 98%); }
+.pm-page #sluzby.lt-what { background: linear-gradient(180deg, #091a2e 0%, #0e2a47 60%, #eaf3f8 98%); }
+.sv-real { background: linear-gradient(180deg, #0f2b47 0%, #12365a 55%, #eaf3f8 96%); }
+.lt-head--navy { padding-bottom: 7.5rem; }
+.lt-how .lt-head--navy .lt-sub { max-width: 40rem; }
+
+/* karty služeb: čitelné, bez zkosení textu */
+.lt-card--what { transform: none; border-left: 0; border-top: 4px solid #40DCE0; border-radius: .8rem; padding: 0 1.3rem 1.3rem; }
+.lt-card--what > * { transform: none; }
+.lt-card--what .lt-card__top { margin: 0 -1.3rem 1rem; padding: 1rem 1.3rem; border-radius: .6rem .6rem 0 0; clip-path: none; }
+.lt-card--what h3 { font-size: 1.2rem; }
+.lt-card--what > p { font-size: 1rem; line-height: 1.55; color: #3f5568; }
+.lt-card__big { font-size: 2.4rem; color: #5a7398; }
+.lt-badge { font-size: .85rem; padding: .5rem .7rem; }
+.lt-ill { font-size: .8rem; }
+
+/* 02 karty: stejný rytmus */
+.lt-why .lt-card > p { font-size: 1rem; color: #3f5568; }
+.lt-checks li { font-size: .98rem; }
+
+/* 05: čistší hlavička (bez seznamu bodů), projekty ve stejné výšce, drobný text větší */
+.sv-head--split .pm-wrap { grid-template-columns: 1fr; }
+.sv-proj p { font-size: .95rem; color: #3f5568; }
+.sv-proj h3 { font-size: 1.05rem; }
+.sv-proj__tags li, .sv-proj__pin { font-size: .85rem; }
+.sv-sum span { font-size: .92rem; }
+
+/* 03 kroky: větší popisy, ať se čtou */
+.lt-how .lt-step p { font-size: .95rem; line-height: 1.55; color: rgba(255,255,255,.88); max-width: 16rem; }
+.lt-how .lt-step h3 { font-size: 1.1rem; }
+
+/* kontakt: nadpisy bloků a čísla odlišené, kontaktní karty větší písmo */
+.sv-cinfo span, .sv-cinfo small { font-size: .9rem; }
+.fq-q { font-size: 1.02rem; }
+
+@media (max-width: 639px) { .lt-head--navy { padding-bottom: 4.5rem; } .lt-card--what > p { font-size: .9rem; } .sv-proj p { font-size: .88rem; } .lt-badge { font-size: .78rem; } }
+.sv-label, .sd-kicker, .lt-ill, .fq-n { font-size: .85rem; }
+.sv-cinfo small { font-size: .9rem; }
+@media (max-width: 639px) {
+  .lt-photo { height: 9rem; }
+  .lt-card--what .lt-ill { top: .35rem; right: .35rem; font-size: .72rem; padding: .1rem .45rem; }
+  .lt-badge { font-size: .72rem; }
+  .lt-card--what > p { font-size: .86rem; }
+}
+
+/* Karty služeb v sekci 04: každá vlastní barva jako na hlavní stránce (modrá, červená, oranžová, tyrkysová) */
+.lt-card--what { --cc: #40DCE0; border-top-color: var(--cc); }
+.lt-card--what:nth-child(1) { --cc: #3b82f6; }
+.lt-card--what:nth-child(2) { --cc: #ef4444; }
+.lt-card--what:nth-child(3) { --cc: #f97316; }
+.lt-card--what:nth-child(4) { --cc: #40DCE0; }
+.lt-card--what .lt-card__top { background: linear-gradient(135deg, color-mix(in srgb, var(--cc) 38%, #0f2b47), #10243A 82%); }
+.lt-card--what .lt-card__i { stroke: #fff; }
+.lt-card--what .lt-card__big { color: color-mix(in srgb, var(--cc) 70%, #fff); opacity: .9; }
+.lt-card--what h3 { color: color-mix(in srgb, var(--cc) 45%, #10243A); }
+.lt-card--what .lt-badge svg { fill: var(--cc); }
+.lt-card--what .lt-badge { border-left: 3px solid var(--cc); }
+.lt-what .lt-card--what { border: 0 !important; border-top: 5px solid var(--cc) !important; }
+.lt-card--what .lt-card__top { box-shadow: inset 0 -3px 0 var(--cc); }
