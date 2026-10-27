@@ -218,6 +218,11 @@
       fetch(endpoint, { method: 'POST', body: new FormData(form), signal: ctrl ? ctrl.signal : undefined })
         .then(function (res) {
           if (!res.ok) throw new Error('send_failed');
+          return res.json().catch(function () { return {}; });
+        })
+        .then(function (data) {
+          // Služba (FormSubmit) vrací HTTP 200 i při odmítnutí, např. neaktivovaný formulář
+          if (data && (data.success === false || data.success === 'false')) throw new Error('send_failed');
           // Konverze se měří až po úspěšném odeslání, aby se nepočítaly neodeslané poptávky
           track('generate_lead', { form_type: type, service: service });
           finishOk(form, thanks, true);
