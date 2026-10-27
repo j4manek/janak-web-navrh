@@ -211,3 +211,10 @@
 .lt-how .lt-step__ic svg.ic2 { width: 3.4rem; height: 3.4rem; stroke: #10243A; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
 .lt-how .lt-step__ic svg.ic2 .a { stroke: #40DCE0; }
 .lt-how .lt-step__ic svg.ic2 circle.a { fill: #40DCE0; stroke: #40DCE0; }
+
+/* Bez diagonálních tyrkysových pruhů v tmavě modrém pozadí (Robin) */
+.lt-stripe, .lt-what::before, .lt-why::before, .lt-how::before, .sd-hero::before, .sv-contact__top::before, .sv-contact__top::after { display: none !important; }
+
+/* Poslední krok = hotovo, zeleně */
+.lt-how .lt-step:last-child .lt-step__ic svg.ic2 { stroke: #1fa463; }
+.lt-how .lt-step:last-child .lt-step__ic svg.ic2 .a { stroke: #1fa463; }
