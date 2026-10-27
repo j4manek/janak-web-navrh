@@ -274,3 +274,32 @@
 .pm-page #recenze.lt-rev { background: radial-gradient(ellipse 70% 28% at 50% 0%, var(--nv-halo), transparent 72%), linear-gradient(180deg, var(--nv-l) 0%, #0c2a4b 45%, var(--nv-d) 100%); }
 .sd-hero::after { background: linear-gradient(180deg, rgba(7, 26, 49, 0) 0%, var(--nv-d) 100%); }
 .sv-contact__top { background: radial-gradient(ellipse 50% 75% at 100% 65%, #153868 0%, transparent 70%), linear-gradient(180deg, var(--nv-d) 0%, #0a2441 100%); }
+
+/* ===== Rytmus: střídání tmavé a zářivé modré + zvlněné předěly (2026-10-27) =====
+   Sekce se střídají D (tmavý navy) a B (zářivější modrá), mezi nimi je měkká vlna ve barvě té další.
+   Bez bílé a bez pruhů; vlna dává každé sekci jasný začátek a konec, aby to nesplývalo. */
+.pm-page { --tone-d: #071a31; --tone-b: #12427a; }
+.pm-page #proc-my.lt-why, .pm-page #sluzby.lt-what { background: linear-gradient(180deg, var(--tone-b) 0%, #1a5896 100%); }
+.pm-page #postup.lt-how, .pm-page #recenze.lt-rev { background: linear-gradient(180deg, var(--tone-d) 0%, #0b2644 100%); }
+.pm-page .sv-contact__top { background: radial-gradient(ellipse 50% 75% at 100% 65%, #1d5da0 0%, transparent 70%), linear-gradient(180deg, var(--tone-b) 0%, #17508c 100%); }
+
+/* vlna na spodku sekce, barva = začátek následující sekce */
+.pm-page .sd-hero { --wv: var(--tone-b); }
+.pm-page #proc-my { --wv: var(--tone-d); }
+.pm-page #postup { --wv: var(--tone-b); }
+.pm-page #sluzby { --wv: var(--tone-d); }
+.pm-page #recenze { --wv: var(--tone-b); }
+.pm-page .sv-contact__top { --wv: #f4f8f9; }
+.pm-page :is(.sd-hero, #proc-my, #postup, #sluzby, #recenze, .sv-contact__top)::after {
+  content: ""; display: block !important; position: absolute; left: 0; right: 0; top: auto; bottom: -1px; width: auto;
+  height: clamp(2.6rem, 6vw, 5.5rem); background: var(--wv); clip-path: none; pointer-events: none; z-index: 1;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 55C180 100 360 100 540 60S900 0 1100 40 1340 90 1440 50V100H0Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 55C180 100 360 100 540 60S900 0 1100 40 1340 90 1440 50V100H0Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+}
+/* místo pro vlnu pod obsahem */
+.pm-page :is(#proc-my, #postup, #sluzby, #recenze).lt-sec { padding-bottom: clamp(4rem, 8vw, 7rem); }
+.pm-page .sv-contact__top { padding-bottom: clamp(5rem, 9vw, 8rem); }
+.pm-page .sd-hero { padding-bottom: clamp(3rem, 6vw, 5.5rem); }
+
+/* panelák jen v 02 a 04 (původní zadání), v recenzích a krocích ne */
+.lt-rev .lt-pan { display: none; }
