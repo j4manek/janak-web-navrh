@@ -239,8 +239,8 @@
 
 /* úvod: spodek plynule do plátna */
 .sd-hero { position: relative; }
-.sd-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 7rem; background: linear-gradient(180deg, rgba(11, 35, 64, 0) 0%, var(--nv-seam) 100%); pointer-events: none; z-index: 1; }
-.sd-hero > * { position: relative; z-index: 2; }
+.sd-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5rem; background: linear-gradient(180deg, rgba(11, 35, 64, 0) 0%, var(--nv-seam) 100%); pointer-events: none; z-index: 1; }
+.sd-hero__txt { position: relative; z-index: 2; }
 
 /* kontakt navazuje na stejný tón */
 .sv-contact__top { background: radial-gradient(ellipse 50% 75% at 100% 65%, #153868 0%, transparent 70%), linear-gradient(180deg, var(--nv-seam) 0%, #0a2441 100%); }
