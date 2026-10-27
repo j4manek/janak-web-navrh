@@ -439,3 +439,19 @@
   .rv-more { min-height: 2.75rem; }
 }
 .pm-page .fq-sec .lt-sub { color: rgba(255,255,255,.8); }
+
+/* Poslední krok "Realizace a předání": výrazná zelená s bílou fajfkou */
+.pm-page .lt-how .lt-step:last-child .lt-step__ic { background: #12a05a; box-shadow: 0 0 0 6px rgba(18,160,90,.28), 0 0 26px rgba(40,200,120,.55); }
+.pm-page .lt-how .lt-step:last-child .lt-step__ic svg.ic2 { stroke: #fff; }
+.pm-page .lt-how .lt-step:last-child .lt-step__ic svg.ic2 circle:not(.a) { fill: #12a05a; stroke: #fff; stroke-width: 2.4; }
+.pm-page .lt-how .lt-step:last-child .lt-step__ic svg.ic2 .a { stroke: #fff; stroke-width: 4.4; }
+.pm-page .lt-how .lt-step:last-child .lt-step__n { background: #12a05a; color: #fff; }
+
+/* F: přechod jako instalatérská trubka (pás trubky se spojkami, dole barva FAQ) */
+.pm-page .sv-contact__top::after {
+  height: clamp(5.6rem, 9vw, 8.4rem) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 360 100%22%3E%0A%3Cdefs%3E%0A%3ClinearGradient id=%22p%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%230d3050%22/%3E%3Cstop offset=%22.16%22 stop-color=%22%233a86aa%22/%3E%3Cstop offset=%22.34%22 stop-color=%22%23a8e6f2%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%234d98b8%22/%3E%3Cstop offset=%22.82%22 stop-color=%22%2317476b%22/%3E%3Cstop offset=%221%22 stop-color=%22%230a2540%22/%3E%3C/linearGradient%3E%0A%3ClinearGradient id=%22c%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%230f3a5c%22/%3E%3Cstop offset=%22.22%22 stop-color=%22%232f7ea3%22/%3E%3Cstop offset=%22.38%22 stop-color=%22%237fd0e2%22/%3E%3Cstop offset=%22.6%22 stop-color=%22%232a7396%22/%3E%3Cstop offset=%221%22 stop-color=%22%230a2540%22/%3E%3C/linearGradient%3E%0A%3C/defs%3E%0A%3Crect x=%220%22 y=%2228%22 width=%22360%22 height=%2244%22 fill=%22url(%23p)%22/%3E%0A%3Crect x=%220%22 y=%2228%22 width=%22360%22 height=%221.5%22 fill=%22%23d8f7fb%22 opacity=%22.55%22/%3E%0A%3Crect x=%22150%22 y=%2218%22 width=%2260%22 height=%2264%22 rx=%225%22 fill=%22url(%23c)%22 stroke=%22%2306223b%22 stroke-width=%221.5%22/%3E%0A%3Crect x=%22160%22 y=%2218%22 width=%225%22 height=%2264%22 fill=%22%2306223b%22 opacity=%22.35%22/%3E%0A%3Crect x=%22195%22 y=%2218%22 width=%225%22 height=%2264%22 fill=%22%2306223b%22 opacity=%22.35%22/%3E%0A%3Crect x=%22150%22 y=%2218%22 width=%2260%22 height=%222%22 fill=%22%23e6fbff%22 opacity=%22.6%22/%3E%0A%3Ccircle cx=%22180%22 cy=%2234%22 r=%223.2%22 fill=%22%2306223b%22 opacity=%22.55%22/%3E%3Ccircle cx=%22180%22 cy=%2266%22 r=%223.2%22 fill=%22%2306223b%22 opacity=%22.55%22/%3E%0A%3Ccircle cx=%22180%22 cy=%2233.2%22 r=%221%22 fill=%22%23bfeff7%22/%3E%3Ccircle cx=%22180%22 cy=%2265.2%22 r=%221%22 fill=%22%23bfeff7%22/%3E%0A%3C/svg%3E"), linear-gradient(180deg, transparent 0 50%, #071a31 50% 100%) !important;
+  background-size: auto 4.5rem, 100% 100% !important;
+  background-repeat: repeat-x, no-repeat !important;
+  background-position: center 50%, center !important;
+}
