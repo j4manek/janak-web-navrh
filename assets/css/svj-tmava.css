@@ -263,3 +263,14 @@
 .pm-page #kontakt.sv-contact::before { display: none; }
 .pm-page #recenze.lt-rev { margin-bottom: -1px; position: relative; z-index: 1; }
 @media (max-width: 639px) { .rv-wrap { margin-top: -1.5rem; } }
+
+/* ===== Viditelné, ale měkké přechody (2026-10-27) =====
+   Dva odstíny: tmavý (D) a zářivě modrý (L), žádná bílá. Sekce se střídají D→L a L→D,
+   takže na každém předělu se tón plynule rozsvítí nebo ztlumí a švy se nikdy neukážou. */
+.pm-page { --nv-d: #071a31; --nv-l: #17518c; --nv-halo: rgba(64, 220, 224, .22); --nv-seam: #071a31; }
+.pm-page #proc-my.lt-why { background: radial-gradient(ellipse 70% 28% at 50% 100%, var(--nv-halo), transparent 72%), linear-gradient(180deg, var(--nv-d) 0%, #0c2a4b 55%, var(--nv-l) 100%); }
+.pm-page #postup.lt-how  { background: radial-gradient(ellipse 70% 28% at 50% 0%, var(--nv-halo), transparent 72%), linear-gradient(180deg, var(--nv-l) 0%, #0c2a4b 45%, var(--nv-d) 100%); }
+.pm-page #sluzby.lt-what { background: radial-gradient(ellipse 70% 28% at 50% 100%, var(--nv-halo), transparent 72%), linear-gradient(180deg, var(--nv-d) 0%, #0c2a4b 55%, var(--nv-l) 100%); }
+.pm-page #recenze.lt-rev { background: radial-gradient(ellipse 70% 28% at 50% 0%, var(--nv-halo), transparent 72%), linear-gradient(180deg, var(--nv-l) 0%, #0c2a4b 45%, var(--nv-d) 100%); }
+.sd-hero::after { background: linear-gradient(180deg, rgba(7, 26, 49, 0) 0%, var(--nv-d) 100%); }
+.sv-contact__top { background: radial-gradient(ellipse 50% 75% at 100% 65%, #153868 0%, transparent 70%), linear-gradient(180deg, var(--nv-d) 0%, #0a2441 100%); }
