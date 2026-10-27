@@ -218,3 +218,48 @@
 /* Poslední krok = hotovo, zeleně */
 .lt-how .lt-step:last-child .lt-step__ic svg.ic2 { stroke: #1fa463; }
 .lt-how .lt-step:last-child .lt-step__ic svg.ic2 .a { stroke: #1fa463; }
+
+/* ===== Jedno spojité tmavě modré plátno (2026-10-27) =====
+   Žádné pruhy, žádná tvrdá hrana mezi sekcemi, žádný bledý pás dole. Každá sekce začíná i končí
+   stejným tónem (--nv-seam), takže se švy neukážou; uprostřed je tón o chlup hlubší nebo světlejší,
+   aby stránka dýchala. Místo pruhů je jen měkká záře v rohu. */
+.pm-page { --nv-seam: #0b2340; --nv-deep: #091a30; --nv-mid: #0f2c4c; --nv-glow: rgba(64, 220, 224, .10); }
+
+.lt-sec { border-top: 0; }
+.pm-page #proc-my.lt-why { background: radial-gradient(ellipse 42% 22% at 6% 68%, var(--nv-glow), transparent 70%), linear-gradient(180deg, var(--nv-seam) 0%, var(--nv-deep) 48%, var(--nv-seam) 100%); }
+.pm-page #postup.lt-how  { background: radial-gradient(ellipse 42% 22% at 94% 36%, var(--nv-glow), transparent 70%), linear-gradient(180deg, var(--nv-seam) 0%, var(--nv-mid) 50%, var(--nv-seam) 100%); }
+.pm-page #sluzby.lt-what { background: radial-gradient(ellipse 42% 22% at 6% 62%, var(--nv-glow), transparent 70%), linear-gradient(180deg, var(--nv-seam) 0%, var(--nv-deep) 48%, var(--nv-seam) 100%); }
+.pm-page #recenze.lt-rev { background: radial-gradient(ellipse 42% 22% at 92% 66%, var(--nv-glow), transparent 70%), linear-gradient(180deg, var(--nv-seam) 0%, var(--nv-mid) 50%, var(--nv-seam) 100%); padding-bottom: 4rem; }
+
+/* hlavičky sekcí splývají s plátnem (bez vlnité masky a vlastního pozadí) */
+.lt-head--navy { background: transparent; -webkit-mask: none; mask: none; }
+
+/* fotka domu se rozplývá do plátna ze všech stran, žádná ostrá hrana nebe */
+.lt-pan { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 42%), linear-gradient(180deg, transparent 0, #000 24%, #000 52%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 42%), linear-gradient(180deg, transparent 0, #000 24%, #000 52%, transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect; }
+
+/* úvod: spodek plynule do plátna */
+.sd-hero { position: relative; }
+.sd-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 7rem; background: linear-gradient(180deg, rgba(11, 35, 64, 0) 0%, var(--nv-seam) 100%); pointer-events: none; z-index: 1; }
+.sd-hero > * { position: relative; z-index: 2; }
+
+/* kontakt navazuje na stejný tón */
+.sv-contact__top { background: radial-gradient(ellipse 50% 75% at 100% 65%, #153868 0%, transparent 70%), linear-gradient(180deg, var(--nv-seam) 0%, #0a2441 100%); }
+
+/* text pod kartami je teď na tmavém, ne na bledém pásu */
+.rv-rate { color: rgba(255, 255, 255, .82); border-left-color: rgba(255, 255, 255, .25); }
+.rv-rate strong { color: #fff; }
+.rv-dots i { background: rgba(255, 255, 255, .28); }
+.rv-dots i.is-on { background: #40DCE0; }
+.rv-wrap { margin-top: -5rem; }
+
+.pm-page .lt-sec, .pm-page .lt-sec + .lt-sec { border-top: 0 !important; border-bottom: 0 !important; }
+
+/* skosené karty recenzí se na krajích neřežou */
+.rv-track { padding-inline: 1.3rem; margin-inline: -1.3rem; }
+@media (max-width: 639px) { .rv-track { padding-inline: .6rem; margin-inline: -.6rem; } }
+
+/* kontakt: sekce nemá vlastní bílý pás nahoře; tmavá je jen horní část, FAQ pod ní zůstává světlé */
+.pm-page #kontakt.sv-contact { background: #f4f8f9; padding-top: 0 !important; border-top: 0 !important; }
+.pm-page #kontakt.sv-contact::before { display: none; }
+.pm-page #recenze.lt-rev { margin-bottom: -1px; position: relative; z-index: 1; }
+@media (max-width: 639px) { .rv-wrap { margin-top: -1.5rem; } }
