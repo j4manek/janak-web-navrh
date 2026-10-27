@@ -331,3 +331,26 @@
 .pm-page #recenze::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -30 1440 160' preserveAspectRatio='none'%3E%3CradialGradient id='r'%3E%3Cstop offset='0' stop-color='%237fd0ff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%237fd0ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='1440' y2='0'%3E%3Cstop offset='0' stop-color='%2340DCE0' stop-opacity='0'/%3E%3Cstop offset='.5' stop-color='%2340DCE0'/%3E%3Cstop offset='1' stop-color='%2340DCE0' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cfilter id='b' filterUnits='userSpaceOnUse' x='0' y='-30' width='1440' height='160'%3E%3CfeGaussianBlur stdDeviation='7'/%3E%3C/filter%3E%3Cellipse cx='720' cy='50' rx='640' ry='70' fill='url(%23r)'/%3E%3Cpath fill='%230b2646' d='M0 50H1440V130H0Z'/%3E%3Cpath fill='none' stroke='%237fd0ff' stroke-width='22' opacity='.38' filter='url(%23b)' vector-effect='non-scaling-stroke' d='M0 50H1440'/%3E%3Cpath fill='none' stroke='url(%23g)' stroke-width='5' vector-effect='non-scaling-stroke' d='M0 50H1440'/%3E%3C/svg%3E") !important; }
 .pm-page .sv-contact__top::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -30 1440 160' preserveAspectRatio='none'%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='1440' y2='0'%3E%3Cstop offset='0' stop-color='%2340DCE0' stop-opacity='0'/%3E%3Cstop offset='.18' stop-color='%2340DCE0'/%3E%3Cstop offset='.82' stop-color='%2340DCE0'/%3E%3Cstop offset='1' stop-color='%2340DCE0' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cfilter id='b' filterUnits='userSpaceOnUse' x='0' y='-30' width='1440' height='160'%3E%3CfeGaussianBlur stdDeviation='7'/%3E%3C/filter%3E%3Cpath fill='%23f4f8f9' d='M0 85Q720 -25 1440 85V130H0Z'/%3E%3Cpath fill='none' stroke='%237fd0ff' stroke-width='22' opacity='.38' filter='url(%23b)' vector-effect='non-scaling-stroke' d='M0 85Q720 -25 1440 85'/%3E%3Cpath fill='none' stroke='url(%23g)' stroke-width='4' vector-effect='non-scaling-stroke' d='M0 85Q720 -25 1440 85'/%3E%3C/svg%3E") !important; }
 .pm-divlabel { position: absolute; right: 1.2rem; bottom: 1rem; z-index: 6; background: rgba(255,255,255,.95); color: #10243A; font: 700 .8rem/1 Montserrat, sans-serif; padding: .45rem .7rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.3); pointer-events: none; }
+
+/* ===== Víc recenzí, loga zdrojů, funkční karusel (2026-10-27) ===== */
+.gw { font: 700 1.3rem/1 'Product Sans', Montserrat, sans-serif; letter-spacing: -.02em; }
+.gw i { font-style: normal; } .gw i:nth-child(1) { color: #4285f4; } .gw i:nth-child(2) { color: #ea4335; } .gw i:nth-child(3) { color: #fbbc05; }
+.gw i:nth-child(4) { color: #4285f4; } .gw i:nth-child(5) { color: #34a853; } .gw i:nth-child(6) { color: #ea4335; }
+.fw { font: 800 1.2rem/1 Montserrat, sans-serif; color: #10243A; letter-spacing: -.02em; } .fw em { font-style: normal; color: #cc0000; }
+.rv-src b { display: none; }
+.rv-av { font: 800 .85rem/1 Montserrat, sans-serif; color: #10243A; letter-spacing: .02em; }
+.rv-card { flex: 0 0 calc((100% - 2.5rem) / 3); }
+.rv-nav:disabled { opacity: .35; cursor: default; }
+.rv-dots button { width: .7rem; height: .7rem; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .28); cursor: pointer; }
+.rv-dots button.is-on { background: #40DCE0; }
+.rv-dots--n { color: rgba(255, 255, 255, .8); font: 600 .9rem/1 Montserrat, sans-serif; }
+.rv-trust { display: inline-flex; gap: .8rem; flex-wrap: wrap; align-items: center; border-left: 1px solid rgba(255, 255, 255, .25); padding-left: 1.5rem; }
+.rv-badge { display: inline-flex; align-items: center; gap: .55rem; background: rgba(255, 255, 255, .96); color: #10243A; border-radius: .6rem; padding: .5rem .8rem; text-decoration: none; box-shadow: 0 4px 14px rgba(0, 0, 0, .2); }
+.rv-badge .gi { width: 1.4rem; height: 1.4rem; } .rv-badge b { font-weight: 800; } .rv-badge small { color: #5a6878; font-size: .8rem; }
+.rv-badge svg:not(.gi) { width: 1rem; height: 1rem; fill: #fbbc05; vertical-align: -.1em; }
+.rv-badge:hover { transform: translateY(-1px); }
+@media (max-width: 639px) { .rv-trust { border-left: 0; padding-left: 0; justify-content: center; } }
+.rv-badge > span:not(.fw) { display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; }
+
+.rv-track { align-items: flex-start; }
+.rv-card { min-height: 15rem; }
