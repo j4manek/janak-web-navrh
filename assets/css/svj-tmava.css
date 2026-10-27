@@ -354,3 +354,57 @@
 
 .rv-track { align-items: flex-start; }
 .rv-card { min-height: 15rem; }
+
+/* ===== Mobil: krátká a přehledná verze (do 639 px) ===== */
+@media (max-width: 639px) {
+  /* úvod: bez odrážek, nižší fotka */
+  .sd-points { display: none; }
+  .sd-lede { font-size: 1rem; margin-bottom: 1.1rem; }
+  .sd-hero__media { max-height: 11rem; overflow: hidden; }
+  .sd-hero__media img { height: 100%; object-fit: cover; }
+
+  /* hlavičky sekcí: bez fotky domu a bez perexu, menší mezery */
+  .lt-head--navy { padding-bottom: 3.2rem; }
+  .lt-head .lt-pan, .lt-head .lt-sub { display: none; }
+  .lt-h2 { font-size: 1.55rem; line-height: 1.2; }
+  .lt-why .lt-grid, .lt-what .lt-grid { margin-top: -2rem; }
+
+  /* 02 Proč my: karta = nadpis + věta, odrážky pryč */
+  .lt-why .lt-checks { display: none; }
+  .lt-why .lt-card { padding: 1rem 1rem .9rem; }
+  .lt-why .lt-card > p { font-size: .92rem; margin-bottom: 0; }
+  .lt-why .lt-card__top h3 { font-size: 1.05rem; }
+  .lt-why .lt-refs li:nth-child(3) { display: none; }
+
+  /* 03 Postup: řádky číslo+ikona | text místo velkých karet, bez hada */
+  .lt-snake__path { display: none; }
+  .lt-how .lt-steps { gap: .6rem; }
+  .lt-how .lt-step { display: grid; grid-template-columns: auto 1fr; column-gap: .9rem; align-items: center; padding: .8rem .9rem; text-align: left; }
+  .lt-how .lt-step__top { grid-row: 1 / span 2; margin: 0; position: relative; display: block; }
+  .lt-how .lt-step .lt-step__ic { display: grid; width: 3.4rem; height: 3.4rem; box-shadow: 0 0 0 4px rgba(255,255,255,.14); }
+  .lt-how .lt-step__ic svg.ic2 { width: 2.1rem; height: 2.1rem; }
+  .lt-how .lt-step__n { position: absolute; top: -.35rem; left: -.35rem; width: 1.35rem; height: 1.35rem; font-size: .68rem; z-index: 1; }
+  .lt-how .lt-step h3 { font-size: 1.02rem; margin: 0; }
+  .lt-how .lt-step p { font-size: .88rem; margin: .15rem 0 0; }
+
+  /* 04 Služby: jeden sloupec, všechny čtyři kompaktně, bez fotek a skrývacího tlačítka */
+  .lt-what .lt-grid--4 { grid-template-columns: 1fr; gap: .7rem; }
+  .lt-what .m-fold:not(.is-open) > :nth-child(n+3) { display: block !important; }
+  .lt-what .m-fold-btn { display: none !important; }
+  .lt-photo, .lt-badge { display: none; }
+  .lt-card--what { padding-bottom: .9rem; }
+  .lt-card--what > p { font-size: .9rem; margin-bottom: 0; }
+  .lt-card--what h3 { font-size: 1.05rem; }
+  .lt-card--what .lt-card__top { padding: .35rem .8rem; margin-bottom: .5rem; }
+  .lt-card--what .lt-card__big { font-size: 1.3rem; }
+
+  /* 05 Recenze: kratší karty, citát max 5 řádků, bez textu odkazu */
+  .rv-card { min-height: 0; }
+  .rv-card blockquote { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; font-size: .92rem; }
+  .rv-src small { display: none; }
+
+  /* 06 Kontakt: stručně, bez Instagramu a odznaků */
+  .sv-contact .sv-sub, .sv-cinfo li:nth-child(4), .sv-checks { display: none; }
+  .sv-formcard__sub { display: none; }
+  .fq-sec .lt-sub { display: none; }
+}
