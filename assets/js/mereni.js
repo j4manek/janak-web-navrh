@@ -3,10 +3,9 @@
 // návštěvník neklikne "Přijmout měření". Na localhostu se gtag.js vůbec nenačítá.
 (function () {
   var GA4_ID = 'G-E4GBFEEDG0';
-  // Google Ads: doplnit ID účtu (AW-XXXXXXXXX) a štítky konverzí z Google Ads
-  // (Cíle > Konverze > Webová stránka > Nastavení značky). Prázdné = Ads tag se nenačítá.
-  var ADS_ID = '';
-  var ADS_LABELS = { phone_click: '', generate_lead: '' };
+  // Google Ads (účet 257-552-2698): konverze "Web – klik na telefon" a "Web – odeslaný formulář (poptávka)"
+  var ADS_ID = 'AW-16766390468';
+  var ADS_LABELS = { phone_click: 'of6LCOuegq0dEMSh67o-', generate_lead: 'wgVGCOiegq0dEMSh67o-' };
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
