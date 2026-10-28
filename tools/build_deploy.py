@@ -22,7 +22,7 @@ for p in PAGES:
     # náhledový web na GitHub Pages a www varianta -> ostrá doména bez www (sjednocení s canonical)
     html = html.replace('https://j4manek.github.io/janak-web-navrh/index.html', DOMAIN + '/')
     html = html.replace('https://j4manek.github.io/janak-web-navrh/', DOMAIN + '/')
-    html = html.replace('https://www.instalaterstvi-janak.cz', DOMAIN)
+    html = html.replace('https://www.instalaterstvi-janak.cz/logo.png', DOMAIN + '/assets/img/logo.png').replace('https://www.instalaterstvi-janak.cz', DOMAIN)
     assert 'github.io' not in html, p
     (OUT / f'{p}.html').write_text(html, encoding='utf-8')
 
