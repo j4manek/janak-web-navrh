@@ -113,19 +113,52 @@
   // apod.) - klonuje styl existujícího [data-thanks] prvku, aby nebylo nutné upravovat HTML.
   // Úspěch: ukázat poděkování, vyčistit formulář (včetně popisku nahrané fotky) a posunout poděkování do zorného pole
   function finishOk(form, thanks, real) {
-    var note = thanks && thanks.querySelector('.ov');
-    if (note) note.hidden = real; // poznámka o prototypu zmizí, jakmile se odesílá doopravdy
     form.reset();
     var file = form.querySelector('input[type="file"]');
     if (file) file.dispatchEvent(new Event('change', { bubbles: true }));
     var ph = form.querySelector('input[name="phone"]');
     if (ph) { ph.setCustomValidity(''); ph.removeAttribute('aria-invalid'); }
     var fe = form.querySelector('.fld-err'); if (fe) fe.hidden = true;
-    if (thanks) {
-      thanks.hidden = false;
-      thanks.setAttribute('tabindex', '-1');
-      thanks.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    var fail = form.querySelector('[data-send-error]'); if (fail) fail.hidden = true;
+    showThanksCard();
+  }
+
+  // Poděkování jako karta uprostřed obrazovky (místo textu pod formulářem)
+  function showThanksCard() {
+    if (!document.getElementById('jt-style')) {
+      var st = document.createElement('style');
+      st.id = 'jt-style';
+      st.textContent =
+        '.jt-ov{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(7,26,49,.62);backdrop-filter:blur(3px);animation:jt-fade .25s ease}' +
+        '.jt-card{position:relative;width:min(26rem,100%);padding:2.2rem 1.8rem 1.8rem;border-radius:1.1rem;background:#fff;color:#10243A;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.4);animation:jt-pop .3s cubic-bezier(.2,.8,.2,1)}' +
+        '.jt-ic{display:grid;place-items:center;width:4.2rem;height:4.2rem;margin:0 auto 1.1rem;border-radius:50%;background:#40DCE0;box-shadow:0 0 0 .55rem rgba(64,220,224,.2)}' +
+        '.jt-ic svg{width:2.2rem;height:2.2rem;fill:none;stroke:#071a31;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}' +
+        '.jt-card h3{margin:0 0 .5rem;font:800 1.5rem/1.2 Montserrat,system-ui,sans-serif}' +
+        '.jt-card p{margin:0 0 1.4rem;font:500 1rem/1.5 Montserrat,system-ui,sans-serif;color:#44566a}' +
+        '.jt-btn{display:inline-block;padding:.8rem 2rem;border:0;border-radius:.6rem;background:#40DCE0;color:#071a31;font:700 1rem/1 Montserrat,system-ui,sans-serif;cursor:pointer}' +
+        '.jt-btn:hover{filter:brightness(.95)}' +
+        '@keyframes jt-fade{from{opacity:0}to{opacity:1}}@keyframes jt-pop{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}' +
+        '@media (prefers-reduced-motion:reduce){.jt-ov,.jt-card{animation:none}}';
+      document.head.appendChild(st);
     }
+    var prev = document.activeElement;
+    var ov = document.createElement('div');
+    ov.className = 'jt-ov';
+    ov.innerHTML = '<div class="jt-card" role="dialog" aria-modal="true" aria-labelledby="jt-h" tabindex="-1">' +
+      '<div class="jt-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>' +
+      '<h3 id="jt-h">Děkujeme za poptávku</h3>' +
+      '<p>Vaši zprávu jsme přijali a co nejdříve se vám ozveme.</p>' +
+      '<button type="button" class="jt-btn">Zavřít</button></div>';
+    function close() {
+      document.removeEventListener('keydown', onKey);
+      ov.remove();
+      if (prev && prev.focus) prev.focus();
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+    ov.addEventListener('click', function (e) { if (e.target === ov || e.target.closest('.jt-btn')) close(); });
+    document.addEventListener('keydown', onKey);
+    document.body.appendChild(ov);
+    ov.querySelector('.jt-btn').focus();
   }
 
   function showSendError(form, thanks) {
