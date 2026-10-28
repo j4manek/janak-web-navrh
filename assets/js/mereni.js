@@ -34,8 +34,8 @@
     if (ADS_ID) gtag('config', ADS_ID);
   }
 
-  // Napojení formuláře na Telegram (outputs/lead-telegram-automation). [doplnit] až bude
-  // Worker nasazený - do té doby formulář jen ukáže potvrzení lokálně (prototyp).
+  // Formuláře posílá odeslat.php e-mailem na info@. Bez nastaveného endpointu (lokální náhled)
+  // formulář jen ukáže potvrzení.
   var FALLBACK_PHONE = '+420 773 146 244';
 
   // Formulář může mít vlastní cíl (jiný e-mail/kanál než hlavní poptávka) přes
@@ -109,7 +109,7 @@
     });
   }
 
-  // Zobrazí záložní zprávu, když se poptávku nepodařilo odeslat na Telegram (Worker nedostupný
+  // Zobrazí záložní zprávu, když se poptávku nepodařilo odeslat (server nedostupný
   // apod.) - klonuje styl existujícího [data-thanks] prvku, aby nebylo nutné upravovat HTML.
   // Úspěch: ukázat poděkování, vyčistit formulář (včetně popisku nahrané fotky) a posunout poděkování do zorného pole
   function finishOk(form, thanks, real) {
