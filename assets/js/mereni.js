@@ -2,7 +2,7 @@
 // se načte vždy (nutné pro consent mode), ale nic neukládá ani neposílá do GA4, dokud
 // návštěvník neklikne "Přijmout měření". Na localhostu se gtag.js vůbec nenačítá.
 (function () {
-  var GA4_ID = 'G-E4GBFEEDG0';
+  var GA4_ID = 'G-LV31BR60C2';
   // Google Ads (účet 257-552-2698): konverze "Web – klik na telefon" a "Web – odeslaný formulář (poptávka)"
   var ADS_ID = 'AW-16766390468';
   var ADS_LABELS = { phone_click: 'of6LCOuegq0dEMSh67o-', generate_lead: 'wgVGCOiegq0dEMSh67o-' };
