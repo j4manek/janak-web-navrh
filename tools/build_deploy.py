@@ -19,6 +19,11 @@ for p in PAGES:
     url = DOMAIN + '/' + ('' if p == 'index' else f'{p}.html')
     html, n = re.subn(r'<meta name="robots" content="noindex, nofollow">', f'<link rel="canonical" href="{url}">', html)
     assert n == 1, p
+    # náhledový web na GitHub Pages a www varianta -> ostrá doména bez www (sjednocení s canonical)
+    html = html.replace('https://j4manek.github.io/janak-web-navrh/index.html', DOMAIN + '/')
+    html = html.replace('https://j4manek.github.io/janak-web-navrh/', DOMAIN + '/')
+    html = html.replace('https://www.instalaterstvi-janak.cz', DOMAIN)
+    assert 'github.io' not in html, p
     (OUT / f'{p}.html').write_text(html, encoding='utf-8')
 
 urls = [DOMAIN + '/' + ('' if p == 'index' else f'{p}.html') for p in PAGES]
